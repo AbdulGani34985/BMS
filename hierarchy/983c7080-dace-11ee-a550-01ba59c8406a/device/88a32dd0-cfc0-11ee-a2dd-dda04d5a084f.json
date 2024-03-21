@@ -1,0 +1,90 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : {
+      "gateway" : false,
+      "overwriteActivityTime" : false,
+      "description" : ""
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "983c7080-dace-11ee-a550-01ba59c8406a"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "4f9ebb90-cfbf-11ee-b58c-478d284d7818"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "88a32dd0-cfc0-11ee-a2dd-dda04d5a084f"
+    },
+    "label" : "",
+    "name" : "Kitchen Occupancy Sensor",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "983c7080-dace-11ee-a550-01ba59c8406a"
+    },
+    "softwareId" : null,
+    "type" : "Occupancy"
+  },
+  "credentials" : {
+    "credentialsId" : "Id8WRRHutHjA2V313u5Z",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "375c3d90-cfbb-11ee-b58c-478d284d7818"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "88a32dd0-cfc0-11ee-a2dd-dda04d5a084f"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4288f550-cfbb-11ee-a2dd-dda04d5a084f"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "88a32dd0-cfc0-11ee-a2dd-dda04d5a084f"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1708414245715,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1708414245717,
+      "longValue" : 1708414245715,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ ]
+  }
+}

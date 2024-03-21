@@ -1,0 +1,103 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : {
+      "gateway" : false,
+      "overwriteActivityTime" : false,
+      "description" : "",
+      "lastConnectedGateway" : "fddda2d0-d6cb-11ee-bbfa-a34d36c3f055"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "983c7080-dace-11ee-a550-01ba59c8406a"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "bf383270-cfdc-11ee-a922-37ae9eb95d8c"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "c2016490-cfdc-11ee-a550-01ba59c8406a"
+    },
+    "label" : "",
+    "name" : "MainPowerSwitch",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "983c7080-dace-11ee-a550-01ba59c8406a"
+    },
+    "softwareId" : null,
+    "type" : "PowerSwitch"
+  },
+  "credentials" : {
+    "credentialsId" : "qrHJMserlAXlfvJmA2Mk",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "01dc1aa0-cfbb-11ee-bbfa-a34d36c3f055"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "c2016490-cfdc-11ee-a550-01ba59c8406a"
+    },
+    "type" : "Manages",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1709820506762,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1709820506762,
+      "longValue" : 1709820506760,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1709819893169,
+      "longValue" : 1709819893169,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastConnectTime",
+      "lastUpdateTs" : 1709819893166,
+      "longValue" : 1709819893166,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastDisconnectTime",
+      "lastUpdateTs" : 1709820193918,
+      "longValue" : 1709820193918,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ ]
+  }
+}

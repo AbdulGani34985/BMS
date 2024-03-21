@@ -1,0 +1,32 @@
+{
+  "entityType" : "WIDGET_TYPE",
+  "entity" : {
+    "fqn" : "latest4",
+    "name" : "latest4",
+    "deprecated" : false,
+    "image" : null,
+    "description" : null,
+    "descriptor" : {
+      "type" : "latest",
+      "sizeX" : 7.5,
+      "sizeY" : 5.5,
+      "resources" : [ ],
+      "templateHtml" : "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n<meta charset=\"UTF-8\">\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n<title>Custom Widget</title>\r\n</head>\r\n<body class=\"clor\">\r\n\r\n<h2>Telemetry Update</h2>\r\n\r\n<mat-tab-group style=\"height: 100%;\">\r\n    <mat-tab *ngFor=\"let datasource of datasources; let $dsIndex = index\" label=\"{{datasource.name}}\">\r\n        <form (submit)=\"onFormSubmit($event)\">\r\n            <div *ngFor=\"let dataKeyData of datasourceData[$dsIndex]\">\r\n                <label for=\"{{dataKeyData.dataKey.label}}\">{{dataKeyData.dataKey.label}}:</label>\r\n                <input type=\"text\" id=\"{{dataKeyData.dataKey.label}}\" name=\"{{dataKeyData.dataKey.label}}\"\r\n                    [value]=\"dataKeyData.data[$dataIndex] && dataKeyData.data[$dataIndex][1]\">\r\n            </div>\r\n            <button type=\"submit\" style=\"background-color: pink; color: red; border: none; padding: 10px 20px; border-radius: 5px;\">Submit</button>\r\n\r\n        </form>\r\n    </mat-tab>\r\n</mat-tab-group>\r\n\r\n\r\n\r\n</body>\r\n</html>\r\n",
+      "templateCss" : ".clor{\n    background-color: grey ;\n}",
+      "controllerScript" : "self.onInit = function() {\r\n  \r\n    self.ctx.widgetTitle = 'My first Time-Series widget';\r\n    self.ctx.$scope.datasources = self.ctx.defaultSubscription.datasources;\r\n    self.ctx.$scope.data = self.ctx.defaultSubscription.data;\r\n    let deviceService= self.ctx.deviceService;\r\n    // console.log(\"deviceService\");\r\n    // console.log(deviceService);\r\n    \r\n    let device=self.ctx.$scope.datasources[0].name;\r\n    let deviceid=self.ctx.$scope.datasources[0].entityId;\r\n    let token1;\r\n\r\n// Using a Promise to handle the asynchronous operation\r\nconst getToken = new Promise((resolve, reject) => {\r\n    deviceService.getDeviceCredentials(deviceid).subscribe((dta) => {\r\n        token1 = dta.credentialsId;\r\n        console.log(\"token1 inside subscription callback:\", token1);\r\n        resolve(token1); // Resolve the Promise with token1\r\n    });\r\n});\r\n\r\n// Accessing token1 inside the Promise chain\r\n\r\n      \r\n      \r\n     \r\n  self.ctx.$scope.datasourceData = [];\r\n   var currentDatasource = null;\r\n    var currentDatasourceIndex = -1;\r\n\r\n    for (var i=0;i<self.ctx.$scope.data.length;i++) {\r\n        var dataKeyData = self.ctx.$scope.data[i];\r\n        if (dataKeyData.datasource != currentDatasource) {\r\n            currentDatasource = dataKeyData.datasource\r\n            currentDatasourceIndex++;\r\n            self.ctx.$scope.datasourceData[currentDatasourceIndex] = [];\r\n\r\n        }\r\n        \r\n        self.ctx.$scope.datasourceData[currentDatasourceIndex].push(dataKeyData);\r\n        \r\n    }\r\n    \r\n   // console.log(dataKeyData.data[0]&&dataKeyData.data[0][1]);\r\n        \r\n        // let key =dataKeyData.dataKey.name;\r\n        // console.log(\"key\");\r\n        // console.log(key);\r\n    self.ctx.updateWidgetParams();\r\n \r\n   // Handle form submission\r\n    self.ctx.$scope.onFormSubmit = function(event) {\r\n        event.preventDefault(); // Prevent the default form submission behavior\r\n        \r\n        let postData = {};\r\n        let formElements = event.target.elements;\r\n        for (let i = 0; i < formElements.length; i++) {\r\n            let element = formElements[i];\r\n            if (element.type === 'text') {\r\n                postData[element.name] = element.value;\r\n            }\r\n        }\r\n\r\n        // Get device credentials and then make API call using Fetch\r\n        getToken.then((token) => {\r\n            const apiUrl = 'https://thingsboard.cloud/api/v1/' + token + '/telemetry';\r\n            const headers = {\r\n                'Content-Type': 'application/json',\r\n            };\r\n            const config = {\r\n                method: 'POST',\r\n                headers: headers,\r\n                body: JSON.stringify(postData),\r\n            };\r\n\r\n            fetch(apiUrl, config)\r\n                .then(response => {\r\n                    console.log('Status:', response.status);\r\n                })\r\n                .catch(error => {\r\n                    console.error('There was an error!', error);\r\n                });\r\n        }).catch((error) => {\r\n            console.error(\"Error occurred:\", error);\r\n        });\r\n    // Handle form submission\r\n    console.log('Form submitted!');\r\n    // You can access form data using event.target, e.g., event.target.elements['elementName'].value\r\n}\r\n\r\n}\r\nself.onDataUpdated = function() {\r\n    self.ctx.detectChanges();\r\n}",
+      "settingsSchema" : "{}",
+      "dataKeySettingsSchema" : "{}\n",
+      "defaultConfig" : "{\"datasources\":[{\"type\":\"function\",\"name\":\"function\",\"dataKeys\":[{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"Random\",\"color\":\"#2196f3\",\"settings\":{},\"_hash\":0.15479322438769105,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"}]}],\"timewindow\":{\"realtime\":{\"timewindowMs\":60000}},\"showTitle\":true,\"backgroundColor\":\"#fff\",\"color\":\"rgba(0, 0, 0, 0.87)\",\"padding\":\"8px\",\"settings\":{},\"title\":\"latest4\"}"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "WIDGET_TYPE",
+      "id" : "c159c3d0-e5de-11ee-96aa-c12be68b6d4d"
+    },
+    "tags" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

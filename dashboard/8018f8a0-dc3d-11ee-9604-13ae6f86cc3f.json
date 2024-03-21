@@ -1,0 +1,395 @@
+{
+  "entityType" : "DASHBOARD",
+  "entity" : {
+    "assignedCustomers" : null,
+    "configuration" : {
+      "description" : "",
+      "widgets" : {
+        "3c6acfba-580b-99a4-c1a2-e61ea1e191aa" : {
+          "typeFullFqn" : "system.entity_admin_widgets.device_admin_table",
+          "type" : "latest",
+          "sizeX" : 7.5,
+          "sizeY" : 6.5,
+          "config" : {
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 86400000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1709700374565,
+                  "endTimeMs" : 1709786774565
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "4px",
+            "settings" : {
+              "entitiesTitle" : "Device admin table",
+              "enableSearch" : true,
+              "enableSelectColumnDisplay" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "showCellActionsMenu" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "displayEntityName" : false,
+              "displayEntityLabel" : false,
+              "displayEntityType" : false,
+              "displayPagination" : true,
+              "defaultPageSize" : 10,
+              "defaultSortOrder" : "entityName",
+              "useRowStyleFunction" : false
+            },
+            "title" : "Device admin table",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "device",
+              "name" : "",
+              "deviceId" : "c1478820-db19-11ee-96aa-c12be68b6d4d",
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.7456863325872043
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "showTitleIcon" : false,
+            "titleIcon" : "more_horiz",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "widgetStyle" : { },
+            "displayTimewindow" : true,
+            "actions" : {
+              "headerButton" : [ {
+                "name" : "Add device",
+                "icon" : "add",
+                "type" : "customPretty",
+                "customHtml" : "<form #addDeviceForm=\"ngForm\" [formGroup]=\"addDeviceFormGroup\"\n      (ngSubmit)=\"save()\" style=\"width: 480px;\">\n  <mat-toolbar fxLayout=\"row\" color=\"primary\">\n    <h2>Add device</h2>\n    <span fxFlex></span>\n    <button mat-icon-button\n            (click)=\"cancel()\"\n            type=\"button\">\n      <mat-icon class=\"material-icons\">close</mat-icon>\n    </button>\n  </mat-toolbar>\n  <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n  </mat-progress-bar>\n  <div style=\"height: 4px;\" *ngIf=\"!(isLoading$ | async)\"></div>\n  <div mat-dialog-content>\n      <div class=\"mat-padding\" fxLayout=\"column\">\n            <mat-form-field class=\"mat-block\">\n                <mat-label>Device name</mat-label>\n                <input matInput formControlName=\"deviceName\" required>\n                <mat-error *ngIf=\"addDeviceFormGroup.get('deviceName').hasError('required')\">\n                    Device name is required.\n                </mat-error>\n            </mat-form-field>\n            <div fxLayout=\"row\" fxLayoutGap=\"8px\">\n                <tb-entity-subtype-autocomplete\n                    fxFlex=\"50\"\n                    formControlName=\"deviceType\"\n                    [required]=\"true\"\n                    [entityType]=\"'DEVICE'\"\n                ></tb-entity-subtype-autocomplete>\n                <mat-form-field fxFlex=\"50\" class=\"mat-block\">\n                    <mat-label>Label</mat-label>\n                    <input matInput formControlName=\"deviceLabel\">\n                </mat-form-field>\n            </div>\n            <div formGroupName=\"attributes\" fxLayout=\"row\" fxLayoutGap=\"8px\">\n                <mat-form-field fxFlex=\"50\" class=\"mat-block\">\n                    <mat-label>Latitude</mat-label>\n                    <input type=\"number\" step=\"any\" matInput formControlName=\"latitude\">\n                </mat-form-field>\n                <mat-form-field fxFlex=\"50\" class=\"mat-block\">\n                    <mat-label>Longitude</mat-label>\n                    <input type=\"number\" step=\"any\" matInput formControlName=\"longitude\">\n                </mat-form-field>\n            </div>\n      </div>  \n  </div>\n  <div mat-dialog-actions fxLayout=\"row\">\n    <span fxFlex></span>\n    <button mat-button color=\"primary\"\n            type=\"button\"\n            [disabled]=\"(isLoading$ | async)\"\n            (click)=\"cancel()\" cdkFocusInitial>\n      Cancel\n    </button>\n    <button mat-button mat-raised-button color=\"primary\"\n            style=\"margin-right: 20px;\"\n            type=\"submit\"\n            [disabled]=\"(isLoading$ | async) || addDeviceForm.invalid || !addDeviceForm.dirty\">\n      Create\n    </button>\n  </div>\n</form>\n",
+                "customCss" : "",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\n\nopenAddDeviceDialog();\n\nfunction openAddDeviceDialog() {\n    customDialog.customDialog(htmlTemplate, AddDeviceDialogController).subscribe();\n}\n\nfunction AddDeviceDialogController(instance) {\n    let vm = instance;\n    \n    vm.addDeviceFormGroup = vm.fb.group({\n      deviceName: ['', [vm.validators.required]],\n      deviceType: ['', [vm.validators.required]],\n      deviceLabel: [''],\n      attributes: vm.fb.group({\n          latitude: [null],\n          longitude: [null]\n      })      \n    });\n    \n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    \n    vm.save = function() {\n        vm.addDeviceFormGroup.markAsPristine();\n        let device = {\n            name: vm.addDeviceFormGroup.get('deviceName').value,\n            type: vm.addDeviceFormGroup.get('deviceType').value,\n            label: vm.addDeviceFormGroup.get('deviceLabel').value\n        };\n        deviceService.saveDevice(device).subscribe(\n            function (device) {\n                saveAttributes(device.id).subscribe(\n                    function () {\n                        widgetContext.updateAliases();\n                        vm.dialogRef.close(null);\n                    }\n                );\n            }\n        );\n    };\n    \n    function saveAttributes(entityId) {\n        let attributes = vm.addDeviceFormGroup.get('attributes').value;\n        let attributesArray = [];\n        for (let key in attributes) {\n            attributesArray.push({key: key, value: attributes[key]});\n        }\n        if (attributesArray.length > 0) {\n            return attributeService.saveEntityAttributes(entityId, \"SERVER_SCOPE\", attributesArray);\n        } else {\n            return widgetContext.rxjs.of([]);\n        }\n    }\n}",
+                "customResources" : [ ],
+                "id" : "70837a9d-c3de-a9a7-03c5-dccd14998758"
+              } ],
+              "actionCellButton" : [ {
+                "name" : "Edit device",
+                "icon" : "edit",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #editDeviceForm=\"ngForm\" [formGroup]=\"editDeviceFormGroup\"\n      (ngSubmit)=\"save()\" style=\"width: 480px;\">\n  <mat-toolbar fxLayout=\"row\" color=\"primary\">\n    <h2>Edit device</h2>\n    <span fxFlex></span>\n    <button mat-icon-button\n            (click)=\"cancel()\"\n            type=\"button\">\n      <mat-icon class=\"material-icons\">close</mat-icon>\n    </button>\n  </mat-toolbar>\n  <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n  </mat-progress-bar>\n  <div style=\"height: 4px;\" *ngIf=\"!(isLoading$ | async)\"></div>\n  <div mat-dialog-content>\n      <div class=\"mat-padding\" fxLayout=\"column\">\n            <mat-form-field class=\"mat-block\">\n                <mat-label>Device name</mat-label>\n                <input matInput formControlName=\"deviceName\" required>\n                <mat-error *ngIf=\"editDeviceFormGroup.get('deviceName').hasError('required')\">\n                    Device name is required.\n                </mat-error>\n            </mat-form-field>\n            <div fxLayout=\"row\" fxLayoutGap=\"8px\">\n                <tb-entity-subtype-autocomplete\n                    fxFlex=\"50\"\n                    formControlName=\"deviceType\"\n                    [required]=\"true\"\n                    [entityType]=\"'DEVICE'\"\n                ></tb-entity-subtype-autocomplete>\n                <mat-form-field fxFlex=\"50\" class=\"mat-block\">\n                    <mat-label>Label</mat-label>\n                    <input matInput formControlName=\"deviceLabel\">\n                </mat-form-field>\n            </div>\n            <div formGroupName=\"attributes\" fxLayout=\"row\" fxLayoutGap=\"8px\">\n                <mat-form-field fxFlex=\"50\" class=\"mat-block\">\n                    <mat-label>Latitude</mat-label>\n                    <input type=\"number\" step=\"any\" matInput formControlName=\"latitude\">\n                </mat-form-field>\n                <mat-form-field fxFlex=\"50\" class=\"mat-block\">\n                    <mat-label>Longitude</mat-label>\n                    <input type=\"number\" step=\"any\" matInput formControlName=\"longitude\">\n                </mat-form-field>\n            </div>\n      </div>  \n  </div>\n  <div mat-dialog-actions fxLayout=\"row\">\n    <span fxFlex></span>\n    <button mat-button color=\"primary\"\n            type=\"button\"\n            [disabled]=\"(isLoading$ | async)\"\n            (click)=\"cancel()\" cdkFocusInitial>\n      Cancel\n    </button>\n    <button mat-button mat-raised-button color=\"primary\"\n            style=\"margin-right: 20px;\"\n            type=\"submit\"\n            [disabled]=\"(isLoading$ | async) || editDeviceForm.invalid || !editDeviceForm.dirty\">\n      Update\n    </button>\n  </div>\n</form>\n",
+                "customCss" : "",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\n\nopenEditDeviceDialog();\n\nfunction openEditDeviceDialog() {\n    customDialog.customDialog(htmlTemplate, EditDeviceDialogController).subscribe();\n}\n\nfunction EditDeviceDialogController(instance) {\n    let vm = instance;\n    \n    vm.device = null;\n    vm.attributes = {};\n    \n    vm.editDeviceFormGroup = vm.fb.group({\n      deviceName: ['', [vm.validators.required]],\n      deviceType: ['', [vm.validators.required]],\n      deviceLabel: [''],\n      attributes: vm.fb.group({\n          latitude: [null],\n          longitude: [null]\n      })      \n    });\n    \n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    \n    vm.save = function() {\n        vm.editDeviceFormGroup.markAsPristine();\n        if (vm.editDeviceFormGroup.get('deviceType').value !== vm.device.type) {\n            delete vm.device.deviceProfileId;\n        }\n        vm.device.name = vm.editDeviceFormGroup.get('deviceName').value,\n        vm.device.type = vm.editDeviceFormGroup.get('deviceType').value,\n        vm.device.label = vm.editDeviceFormGroup.get('deviceLabel').value\n        deviceService.saveDevice(vm.device).subscribe(\n            function () {\n                saveAttributes().subscribe(\n                    function () {\n                        widgetContext.updateAliases();\n                        vm.dialogRef.close(null);\n                    }\n                );\n            }\n        );\n    };\n    \n    getEntityInfo();\n    \n    function getEntityInfo() {\n        deviceService.getDevice(entityId.id).subscribe(\n            function (device) {\n                attributeService.getEntityAttributes(entityId, 'SERVER_SCOPE',\n                                                    ['latitude', 'longitude']).subscribe(\n                   function (attributes) {\n                        for (let i = 0; i < attributes.length; i++) {\n                            vm.attributes[attributes[i].key] = attributes[i].value; \n                        }\n                        vm.device = device;\n                        vm.editDeviceFormGroup.patchValue(\n                            {\n                                deviceName: vm.device.name,\n                                deviceType: vm.device.type,\n                                deviceLabel: vm.device.label,\n                                attributes: {\n                                    latitude: vm.attributes.latitude,\n                                    longitude: vm.attributes.longitude\n                                }\n                            }, {emitEvent: false}\n                        );\n                   } \n                );\n            }\n        );    \n    }\n    \n    function saveAttributes() {\n        let attributes = vm.editDeviceFormGroup.get('attributes').value;\n        let attributesArray = [];\n        for (let key in attributes) {\n            attributesArray.push({key: key, value: attributes[key]});\n        }\n        if (attributesArray.length > 0) {\n            return attributeService.saveEntityAttributes(entityId, 'SERVER_SCOPE', attributesArray);\n        } else {\n            return widgetContext.rxjs.of([]);\n        }\n    }\n}",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "93931e52-5d7c-903e-67aa-b9435df44ff4"
+              }, {
+                "name" : "Delete device",
+                "icon" : "delete",
+                "type" : "custom",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet dialogs = $injector.get(widgetContext.servicesMap.get('dialogs'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\n\nopenDeleteDeviceDialog();\n\nfunction openDeleteDeviceDialog() {\n    let title = \"Are you sure you want to delete the device \" + entityName +  \"?\";\n    let content = \"Be careful, after the confirmation, the device and all related data will become unrecoverable!\";\n    dialogs.confirm(title, content, 'Cancel', 'Delete').subscribe(\n        function (result) {\n            if (result) {\n                deleteDevice();\n            }\n        }\n    );\n}\n\nfunction deleteDevice() {\n    deviceService.deleteDevice(entityId.id).subscribe(\n        function () {\n            widgetContext.updateAliases();\n        }\n    );\n}\n",
+                "id" : "ec2708f6-9ff0-186b-e4fc-7635ebfa3074"
+              } ]
+            },
+            "configMode" : "basic",
+            "titleFont" : null,
+            "titleColor" : null,
+            "enableDataExport" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "3c6acfba-580b-99a4-c1a2-e61ea1e191aa"
+        },
+        "36de1517-3896-ef38-fbf7-35122fda27b7" : {
+          "typeFullFqn" : "system.entity_admin_widgets.device_admin_table",
+          "type" : "latest",
+          "sizeX" : 7.5,
+          "sizeY" : 6.5,
+          "config" : {
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 86400000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1709555290858,
+                  "endTimeMs" : 1709641690858
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "4px",
+            "settings" : {
+              "entitiesTitle" : "Device admin table",
+              "enableSearch" : true,
+              "enableSelectColumnDisplay" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "showCellActionsMenu" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "displayEntityName" : false,
+              "displayEntityLabel" : false,
+              "displayEntityType" : false,
+              "displayPagination" : true,
+              "defaultPageSize" : 10,
+              "defaultSortOrder" : "entityName",
+              "useRowStyleFunction" : false
+            },
+            "title" : "Device admin table",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "744c54df-fa62-d42b-ff36-7c3b3341522b",
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.8505556651769808
+              }, {
+                "name" : "type",
+                "type" : "entityField",
+                "label" : "Type",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.8939960146278785
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "showTitleIcon" : false,
+            "titleIcon" : "more_horiz",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "widgetStyle" : { },
+            "displayTimewindow" : true,
+            "actions" : {
+              "headerButton" : [ {
+                "name" : "Add device",
+                "icon" : "add",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addDeviceForm=\"ngForm\" [formGroup]=\"addDeviceFormGroup\"\n      (ngSubmit)=\"save()\" style=\"width: 480px;\">\n  <mat-toolbar fxLayout=\"row\" color=\"accent\">\n    <h2>Add device</h2>\n    <span fxFlex></span>\n    <button mat-icon-button\n            (click)=\"cancel()\"\n            type=\"button\">\n      <mat-icon class=\"material-icons customIcon\">close</mat-icon>\n    </button>\n  </mat-toolbar>\n  <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n  </mat-progress-bar>\n  <div style=\"height: 4px;\" *ngIf=\"!(isLoading$ | async)\"></div>\n  <div mat-dialog-content>\n      <div class=\"mat-padding\" fxLayout=\"column\">\n            <mat-form-field class=\"mat-block\">\n                <mat-label>Device name</mat-label>\n                <input matInput formControlName=\"deviceName\" required>\n                <mat-error *ngIf=\"addDeviceFormGroup.get('deviceName').hasError('required')\">\n                    Device name is required.\n                </mat-error>\n            </mat-form-field>\n            <div fxLayout=\"row\" fxLayoutGap=\"8px\">\n                <tb-entity-subtype-autocomplete\n                    fxFlex=\"50\"\n                    formControlName=\"deviceType\"\n                    [required]=\"true\"\n                    [entityType]=\"'DEVICE'\"\n                ></tb-entity-subtype-autocomplete>\n                <mat-form-field fxFlex=\"50\" class=\"mat-block\">\n                    <mat-label>Label</mat-label>\n                    <input matInput formControlName=\"deviceLabel\">\n                </mat-form-field>\n            </div>\n            <div formGroupName=\"attributes\" fxLayout=\"row\" fxLayoutGap=\"8px\">\n                <mat-form-field fxFlex=\"50\" class=\"mat-block\">\n                    <mat-label>Latitude</mat-label>\n                    <input type=\"number\" step=\"any\" matInput formControlName=\"latitude\">\n                </mat-form-field>\n                <mat-form-field fxFlex=\"50\" class=\"mat-block\">\n                    <mat-label>Longitude</mat-label>\n                    <input type=\"number\" step=\"any\" matInput formControlName=\"longitude\">\n                </mat-form-field>\n            </div>\n      </div>  \n  </div>\n  <div mat-dialog-actions fxLayout=\"row\">\n    <span fxFlex></span>\n    <button mat-button color=\"accent\"\n            type=\"button\"\n            [disabled]=\"(isLoading$ | async)\"\n            (click)=\"cancel()\" cdkFocusInitial>\n      Cancel\n    </button>\n    <button id=\"cbttn\" mat-button mat-raised-button color=\"accent\"\n            style=\"margin-right: 20px;\"\n            type=\"submit\"\n            [disabled]=\"(isLoading$ | async) || addDeviceForm.invalid || !addDeviceForm.dirty\">\n      Create\n    </button>\n  </div>\n</form>\n",
+                "customCss" : "#cbttn, .customIcon{\n    color : yellow;\n}",
+                "customFunction" : "console.log(widgetContext);\nlet $injector = widgetContext.$scope.$injector;\n\n// Allows CRUD (Create, Read, Updat, Delete) operations on these\nlet customDialog = $injector.get(widgetContext.servicesMap\n    .get('customDialog'));\nlet deviceService = $injector.get(widgetContext.servicesMap\n    .get('deviceService'));\nlet attributeService = $injector.get(widgetContext\n    .servicesMap.get('attributeService'));\n\nopenAddDeviceDialog();\n\n// Function to open form dialog box\nfunction openAddDeviceDialog() {\n    customDialog.customDialog(htmlTemplate,\n        AddDeviceDialogController).subscribe();\n}\n\nfunction AddDeviceDialogController(instance) {\n\n    // console.log(\"instance\", instance);\n    // View Model - Provide some more methods or observables nothing but a piece of code\n    // such as cancel, save, isLoading adn validators etc\n    let vm = instance;\n\n    // Reflect these default valuse to our Form\n    vm.addDeviceFormGroup = vm.fb.group({\n        deviceName: ['', [vm.validators.required]],\n        deviceType: ['', [vm.validators.required]],\n        deviceLabel: [''],\n        attributes: vm.fb.group({\n            latitude: [null],\n            longitude: [null]\n        })\n    });\n\n    // To cancel to request\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n\n    ///****** First step till here ******///\n\n    // First takes device credentials\n    vm.save = function() {\n        vm.addDeviceFormGroup.markAsPristine();\n        let device = {\n            name: vm.addDeviceFormGroup.get(\n                'deviceName').value,\n            type: vm.addDeviceFormGroup.get(\n                'deviceType').value,\n            label: vm.addDeviceFormGroup.get(\n                'deviceLabel').value\n        };\n\n        // then saves the Device\n        deviceService.saveDevice(device).subscribe(\n\n            // Then here we get complete details about the device and id as well\n            function(device) {\n\n                // Then taking deviceId and save Attributes for it\n                saveAttributes(device.id).subscribe(\n                    function() {\n                        widgetContext\n                            .updateAliases();\n                        vm.dialogRef.close(\n                        null);\n                    }\n                );\n            }\n        );\n    };\n\n    // Save attributes function\n    function saveAttributes(entityId) {\n\n        let attributes = vm.addDeviceFormGroup.get(\n            'attributes').value;\n\n        let attributesArray = [];\n        for (let key in attributes) {\n            // console.log(\"attributes\", key)\n            attributesArray.push({\n                key: key,\n                value: attributes[key]\n            });\n        }\n\n        // If values are there\n        if (attributesArray.length > 0) {\n            return attributeService.saveEntityAttributes(\n                entityId, \"SERVER_SCOPE\",\n                attributesArray);\n        } else {\n            return widgetContext.rxjs.of([]);\n        }\n    }\n}",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "70837a9d-c3de-a9a7-03c5-dccd14998758"
+              } ],
+              "actionCellButton" : [ {
+                "name" : "access device credentials",
+                "icon" : "more_vert",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #editDeviceForm=\"ngForm\"\n    [formGroup]=\"editDeviceFormGroup\" (ngSubmit)=\"save()\"\n    style=\"width: 480px;\">\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\n        <h2>Device Credentials</h2>\n        <span fxFlex></span>\n        <button mat-icon-button (click)=\"cancel()\"\n            type=\"button\">\n            <mat-icon\n                class=\"material-icons\">close</mat-icon>\n        </button>\n    </mat-toolbar>\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\"\n        *ngIf=\"isLoading$ | async\">\n    </mat-progress-bar>\n    <div style=\"height: 4px;\" *ngIf=\"!(isLoading$ | async)\">\n    </div>\n    <div mat-dialog-content>\n        <div class=\"mat-padding\" fxLayout=\"column\">\n            <mat-form-field class=\"mat-block\">\n                <mat-label>Device name</mat-label>\n                <input matInput formControlName=\"deviceName\"\n                    required>\n                <mat-error\n                    *ngIf=\"editDeviceFormGroup.get('deviceName').hasError('required')\">\n                    Device name is required.\n                </mat-error>\n            </mat-form-field>\n            <div fxLayout=\"row\" fxLayoutGap=\"8px\">\n                <tb-entity-subtype-autocomplete fxFlex=\"50\"\n                    formControlName=\"deviceType\"\n                    [required]=\"true\"\n                    [entityType]=\"'DEVICE'\"></tb-entity-subtype-autocomplete>\n                \n                <mat-form-field fxFlex=\"50\"\n                    class=\"mat-block\">\n                    <mat-label>Access Token</mat-label>\n                    <input matInput\n                        formControlName=\"deviceToken\">\n                </mat-form-field>\n            </div>\n            \n        </div>\n    </div>\n    <div mat-dialog-actions fxLayout=\"row\">\n        <span fxFlex></span>\n        <button mat-button color=\"primary\" type=\"button\"\n            [disabled]=\"(isLoading$ | async)\"\n            (click)=\"cancel()\" cdkFocusInitial>\n            Cancel\n        </button>\n        <button mat-button mat-raised-button color=\"primary\"\n            style=\"margin-right: 20px;\" type=\"submit\"\n            [disabled]=\"(isLoading$ | async) || editDeviceForm.invalid || !editDeviceForm.dirty\">\n            Update\n        </button>\n    </div>\n</form>",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\n\r\nconsole.log(\"widgetContext :\");\r\nconsole.log(widgetContext);\r\nconsole.log(\"widgetContext.$scope : \"+widgetContext.$scope);\r\nconsole.log(\"widgetContext.$scope.$injector : \"+widgetContext.$scope.$injetor);\r\n// Allows CRUD (Create, Read, Updat, Delete) operations on these\r\nlet dialogs = $injector.get(widgetContext.servicesMap.get('dialogs'));\r\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\r\nlet customDialog = $injector.get(widgetContext.servicesMap\r\n    .get('customDialog'));\r\n\r\n    \r\nopenGetDeviceCredentialsDialog();\r\n\r\nfunction openGetDeviceCredentialsDialog() {\r\n    let title = \"Are you sure you want to get the device :  \" + entityName +  \"      credentials ?\";\r\n    let content = \"Be careful, and be ensure you have taken permission from the  owner!\";\r\n    \r\n    // Open prompt window for confirmation\r\n    dialogs.confirm(title, content, 'Cancel', 'Next').subscribe(\r\n        function (result) {\r\n            // If true means = delete\r\n            if (result) {\r\n                DeviceCredentialsDialog();\r\n            }\r\n        }\r\n    );\r\n}\r\n\r\n\r\nfunction DeviceCredentialsDialog() {\r\n    customDialog.customDialog(htmlTemplate,\r\n        DeviceCredentialsDialogController).subscribe();\r\n}\r\n\r\nfunction DeviceCredentialsDialogController(instance) {\r\n    // View Model - Provide some more methods or observables nothing but a piece of code\r\n    // such as cancel, save, isLoading adn validators etc\r\n    let vm = instance;\r\n\r\n    vm.device = null;\r\n    vm.attributes = {};\r\n\r\n    // Reflect these default valuse to our Form\r\n    vm.editDeviceFormGroup = vm.fb.group({\r\n        deviceName: ['', [vm.validators.required]],\r\n        deviceType: ['', [vm.validators.required]],\r\n       \r\n        deviceToken: [''],\r\n       \r\n    });\r\n\r\n    // To cancel to request\r\n    vm.cancel = function() {\r\n        vm.dialogRef.close(null);\r\n    };\r\n\r\n    ///****** First step till here ******///\r\n\r\n    // First takes device credentials\r\n    vm.save = function() {\r\n        vm.editDeviceFormGroup.markAsPristine();\r\n        if (vm.editDeviceFormGroup.get('deviceType')\r\n            .value !== vm.device.type) {\r\n            delete vm.device.deviceProfileId;\r\n        }\r\n        vm.device.name = vm.editDeviceFormGroup.get(\r\n                'deviceName').value,\r\n            vm.device.type = vm.editDeviceFormGroup.get(\r\n                'deviceType').value,\r\n            vm.device.token = vm.editDeviceFormGroup\r\n            .get('deviceToken').value;\r\n\r\n        // Then here we get complete details about the device and id as well\r\n        \r\n        // vm.device passing all the updated details of device\r\n        deviceService.saveDevice(vm.device).subscribe(\r\n            // Then here we get complete details about the device and id as well\r\n            function() {\r\n                \r\n                // Then save Attributes for it and ID already we have\r\n                saveAttributes().subscribe(\r\n                    function() {\r\n                        widgetContext\r\n                            .updateAliases();\r\n                        vm.dialogRef.close(\r\n                            null);\r\n                    }\r\n                );\r\n            }\r\n        );\r\n    };\r\n\r\n    getEntityInfo();\r\n\r\n// To get all details in the form\r\n    function getEntityInfo() {\r\n        deviceService.getDevice(entityId.id).subscribe(\r\n            function(device) {\r\n               \r\n                deviceService.getDeviceCredentials(entityId.id).subscribe(function(item){\r\n                    \r\n                console.log(\"item.credentialsId : \",item.credentialsId);\r\n                \r\n                            vm.device = device;\r\n                            vm.editDeviceFormGroup\r\n                                .patchValue({\r\n                                    deviceName: vm.device.name,\r\n                                    deviceType: vm.device.type,\r\n                                    deviceToken: item.credentialsId\r\n                                }, {\r\n                                    emitEvent: false\r\n                                });\r\n        \r\n            }\r\n        );\r\n    }\r\n    );\r\n    }\r\n}",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "007da112-3ee8-e0c1-1cd2-b498d65245d5"
+              }, {
+                "name" : "Edit device",
+                "icon" : "edit",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<!DOCTYPE html>\n\n  <!--editDeviceFormGroup is a name of form that is created in js and first two lines are format of angular in html  -->\n<form #editDeviceForm=\"ngForm\" [formGroup]=\"editDeviceFormGroup\"\n      (ngSubmit)=\"save()\" style=\"width: 480px;\">\n    <!--Angular Material is a library of UI components ,,In Angular Material, <mat-toolbar> is a component that provides a toolbar with Material Design styling-->\n  <mat-toolbar fxLayout=\"row\" color=\"primary\">\n    <h2>Edit device</h2>\n    <span fxFlex></span>\n    <button mat-icon-button\n            (click)=\"cancel()\"\n            type=\"button\">\n      <mat-icon class=\"material-icons\">close</mat-icon>\n    </button>\n  </mat-toolbar>\n  <!--toolbar has heading and cancel button-->\n  <!--progress bar will do his  work if loading-->\n  <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n  </mat-progress-bar>\n  <!--if not loding given height bw dialog and toolbar here-->\n  <div style=\"height: 4px;\" *ngIf=\"!(isLoading$ | async)\"></div>\n  <!--complete dialog materal library used and start here-->\n  <div mat-dialog-content>\n      <div class=\"mat-padding\" fxLayout=\"column\">\n            <mat-form-field class=\"mat-block\">\n                <!--label is small that appears above our writing -->\n                <!--formControlName se apne js se connect krte h-->\n                <mat-label>Device name</mat-label>\n                <input matInput formControlName=\"deviceName\" required>\n                <mat-error *ngIf=\"editDeviceFormGroup.get('deviceName').hasError('required')\">\n                    Device name is required.\n                </mat-error>\n            </mat-form-field>\n            <div fxLayout=\"row\" fxLayoutGap=\"8px\">\n                <!--tb-entity-subtype-autocomplete se jis [entityType] ki data me tenant ke devices ya assets show honge automatically for better experience-->\n                <tb-entity-subtype-autocomplete\n                    fxFlex=\"50\"\n                    formControlName=\"deviceType\"\n                    [required]=\"true\"\n                    [entityType]=\"'DEVICE'\"\n                ></tb-entity-subtype-autocomplete>\n                <mat-form-field fxFlex=\"50\" class=\"mat-block\">\n                    <mat-label>Label</mat-label>\n                    <input matInput formControlName=\"deviceLabel\">\n                </mat-form-field>\n            </div>\n            <!--yahan pe attributes ke liye alag group bna diya bus -->\n            <div formGroupName=\"attributes\" fxLayout=\"row\" fxLayoutGap=\"8px\">\n                <mat-form-field fxFlex=\"50\" class=\"mat-block\">\n                    <mat-label>Latitude</mat-label>\n                    <input type=\"number\" step=\"any\" matInput formControlName=\"latitude\">\n                </mat-form-field>\n                <mat-form-field fxFlex=\"50\" class=\"mat-block\">\n                    <mat-label>Longitude</mat-label>\n                    <input type=\"number\" step=\"any\" matInput formControlName=\"longitude\">\n                </mat-form-field>\n            </div>\n      </div>  \n  </div>\n  <div mat-dialog-actions fxLayout=\"row\">\n    <span fxFlex></span>\n    <!--loading ke case me cancel ko click nhi krr sakte wo feature di h extra-->\n    <button mat-button color=\"primary\"\n            type=\"button\"\n            [disabled]=\"(isLoading$ | async)\"\n            (click)=\"cancel()\" cdkFocusInitial>\n      Cancel\n    </button>\n    <!--loading,,invalid,,dirty ke case me cancel ko click nhi krr sakte wo feature di h extra-->\n    <button mat-button mat-raised-button color=\"primary\"\n            style=\"margin-right: 20px;\"\n            type=\"submit\"\n            [disabled]=\"(isLoading$ | async) || editDeviceForm.invalid || !editDeviceForm.dirty\">\n      Update\n    </button>\n  </div>\n</form>\n",
+                "customCss" : "",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\n\n// Allows CRUD (Create, Read, Updat, Delete) operations on these\nlet customDialog = $injector.get(widgetContext.servicesMap\n    .get('customDialog'));\nlet deviceService = $injector.get(widgetContext.servicesMap\n    .get('deviceService'));\nlet attributeService = $injector.get(widgetContext\n    .servicesMap.get('attributeService'));\n\nopenEditDeviceDialog();\n\n// Function to open form dialog box\nfunction openEditDeviceDialog() {\n    customDialog.customDialog(htmlTemplate,\n        EditDeviceDialogController).subscribe();\n}\n\nfunction EditDeviceDialogController(instance) {\n    \n    // View Model - Provide some more methods or observables nothing but a piece of code\n    // such as cancel, save, isLoading adn validators etc\n    let vm = instance;\n\n    vm.device = null;\n    vm.attributes = {};\n\n    // Reflect these default valuse to our Form\n    vm.editDeviceFormGroup = vm.fb.group({\n        deviceName: ['', [vm.validators.required]],\n        deviceType: ['', [vm.validators.required]],\n        deviceLabel: [''],\n        attributes: vm.fb.group({\n            latitude: [null],\n            longitude: [null]\n        })\n    });\n\n    // To cancel to request\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n\n    ///****** First step till here ******///\n\n    // First takes device credentials\n    vm.save = function() {\n        vm.editDeviceFormGroup.markAsPristine();\n        if (vm.editDeviceFormGroup.get('deviceType')\n            .value !== vm.device.type) {\n            delete vm.device.deviceProfileId;\n        }\n        vm.device.name = vm.editDeviceFormGroup.get(\n                'deviceName').value,\n            vm.device.type = vm.editDeviceFormGroup.get(\n                'deviceType').value,\n            vm.device.label = vm.editDeviceFormGroup\n            .get('deviceLabel').value\n\n        // Then here we get complete details about the device and id as well\n        \n        // vm.device passing all the updated details of device\n        deviceService.saveDevice(vm.device).subscribe(\n            // Then here we get complete details about the device and id as well\n            function() {\n                \n                // Then save Attributes for it and ID already we have\n                saveAttributes().subscribe(\n                    function() {\n                        widgetContext\n                            .updateAliases();\n                        vm.dialogRef.close(\n                            null);\n                    }\n                );\n            }\n        );\n    };\n\n    getEntityInfo();\n\n// To get all details in the form\n    function getEntityInfo() {\n        deviceService.getDevice(entityId.id).subscribe(\n            function(device) {\n                attributeService.getEntityAttributes(\n                        entityId, 'SERVER_SCOPE',\n                        ['latitude', 'longitude'])\n                    .subscribe(\n                        function(attributes) {\n                            for (let i = 0; i <\n                                attributes.length; i++\n                            ) {\n                                vm.attributes[\n                                        attributes[i]\n                                        .key] =\n                                    attributes[i].value;\n                            }\n                            vm.device = device;\n                            vm.editDeviceFormGroup\n                                .patchValue({\n                                    deviceName: vm.device.name,\n                                    deviceType: vm.device.type,\n                                    deviceLabel: vm.device.label,\n                                    attributes: {\n                                        latitude: vm.attributes.latitude,\n                                        longitude: vm.attributes.longitude\n                                    }\n                                }, {\n                                    emitEvent: false\n                                });\n                        }\n                    );\n            }\n        );\n    }\n\n    // Save attributes function\n    function saveAttributes() {\n        let attributes = vm.editDeviceFormGroup.get('attributes').value;\n        let attributesArray = [];\n        for (let key in attributes) {\n            attributesArray.push({\n                key: key,\n                value: attributes[key]\n            });\n        }\n        \n        // If values are there\n        if (attributesArray.length > 0) {\n            return attributeService.saveEntityAttributes(\n                entityId, 'SERVER_SCOPE',\n                attributesArray);\n        } else {\n            return widgetContext.rxjs.of([]);\n        }\n    }\n}",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "93931e52-5d7c-903e-67aa-b9435df44ff4"
+              }, {
+                "name" : "Delete device",
+                "icon" : "delete",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\n\r\nconsole.log(\"widgetContext :\");\r\nconsole.log(widgetContext);\r\nconsole.log(\"widgetContext.$scope : \"+widgetContext.$scope);\r\nconsole.log(\"widgetContext.$scope.$injector : \"+widgetContext.$scope.$injetor);\r\n// Allows CRUD (Create, Read, Updat, Delete) operations on these\r\nlet dialogs = $injector.get(widgetContext.servicesMap.get('dialogs'));\r\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\r\n\r\nopenDeleteDeviceDialog();\r\n\r\nfunction openDeleteDeviceDialog() {\r\n    let title = \"Are you sure you want to delete the device \" + entityName +  \"?\";\r\n    let content = \"Be careful, after the confirmation, the device and all related data will become unrecoverable!\";\r\n    \r\n    // Open prompt window for confirmation\r\n    dialogs.confirm(title, content, 'Cancel', 'Delete').subscribe(\r\n        function (result) {\r\n            // If true means = delete\r\n            if (result) {\r\n                deleteDevice();\r\n            }\r\n        }\r\n    );\r\n}\r\n\r\nfunction deleteDevice() {\r\n    deviceService.deleteDevice(entityId.id).subscribe(\r\n        function () {\r\n            widgetContext.updateAliases();\r\n        }\r\n    );\r\n}\r\n",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "ec2708f6-9ff0-186b-e4fc-7635ebfa3074"
+              }, {
+                "name" : "deviceServices",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\n\r\nconsole.log(\"widgetContext :\");\r\nconsole.log(widgetContext);\r\n/*\r\nconsole.log(\"widgetContext.$scope : \"+widgetContext.$scope);\r\nconsole.log(\"widgetContext.$scope.$injector : \"+widgetContext.$scope.$injetor);\r\n*/\r\n\r\n// Allows CRUD (Create, Read, Updat, Delete) operations on these\r\n//let dialogs = $injector.get(widgetContext.servicesMap.get('dialogs'));\r\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\r\n//let deviceId = 'c1478820-db19-11ee-96aa-c12be68b6d4d';\r\n// deviceService.deleteDevice(deviceId).subscribe(()=>{\r\n//     console.log(\"device deleted with that id sucesfully\" );\r\n// });\r\nlet pageLink = widgetContext.$scope.ctx.pageLink(10);\r\nconsole.log(pageLink);\r\n\r\n//< ---   one device name       AND USECASE OF LINKPAGE      ---->\r\n// deviceService.getTenantDevices(pageLink).subscribe((data) => {\r\n//     console.log(\"DevicesPageLinkData -JSON.stringify(data.data)  : \" ,JSON.stringify(data.data));\r\n//     console.log(\"DevicesPageLinkData -data.data  : \" ,data.data);\r\n//      console.log(\"DevicesPageLink  data.data[0].name : \" , data.data[0].name);\r\n// });\r\n\r\n/*//< ---   one and other devices name     (GET TENANT DEVICES )        ---->\r\ndeviceService.getTenantDevices(pageLink).subscribe((data) => {\r\n    let dataArray =data.data;\r\n    console.log(\"DevicesPageLinkData -JSON.stringify(data.data)  : \" ,JSON.stringify(data.data));\r\n    console.log(\"DevicesPageLinkData -data.data  : \" ,data.data);\r\n    // console.log(\"DevicesPageLink  data.data[0].name : \" , data.data[0].name);\r\n    dataArray.forEach((item)=>{\r\n      console.log(\"item.name : \", item.name);\r\n    });\r\n    \r\n});*/\r\n//console.log(\"entityId.id\");\r\n//console.log(entityId.id);\r\n\r\n//<---   GET A DEVICE AND DELETE A DEVICE USING DEVICE ID  --->\r\n// deviceService.getDevice(entityId.id).subscribe( () => {\r\n//     console.log(\"Device  deleted\" );\r\n    \r\n// });\r\n\r\n// ();\r\n\r\n/*//<---                      getCustomerDevices     --->\r\nlet customerId='983c7080-dace-11ee-a550-01ba59c8406a';\r\ndeviceService.getCustomerDevices(customerId,pageLink).subscribe((data)=>{\r\n     let dataArray =data.data;\r\n    dataArray.forEach((item)=>{\r\n      console.log(\"item.name of customer device : \", item.name);\r\n    });\r\n});*/\r\n\r\n/*//<--- deviceService.findByName(deviceName)     ---->\r\ndeviceService.getTenantDevices(pageLink).subscribe((data) => {\r\n    let dataArray =data.data;\r\n    dataArray.forEach((item)=>{\r\n      //console.log(\"item.name : \", item.name);\r\n      let deviceName=item.name;\r\n      deviceService.findByName(deviceName).subscribe((dta) => {\r\n          console.log(\"dta\", dta);\r\n      });\r\n    });\r\n});*/\r\n\r\n//<----    deviceService.getDeviceCredentials(deviceId)   --->\r\n\r\ndeviceService.getTenantDevices(pageLink).subscribe((data) => {\r\n    let dataArray =data.data;\r\n    dataArray.forEach((item)=>{\r\n      console.log(\"item.name : \", item.name);\r\n      console.log(\"item.id.id  \" ,item.id.id);\r\n      let devicEid=item.id.id;\r\n      deviceService.getDeviceCredentials(devicEid).subscribe((dta) => {\r\n          console.log(\"deviceService.getDeviceCredentials\", dta);\r\n          console.log(\"dta token or dta.credentialsId\", dta.credentialsId);\r\n      });\r\n    });\r\n});\r\n\r\n/*\r\nconst d ={\r\n    name: \"ag\",\r\n    type: \"pp\",\r\n    label: \"kl\"\r\n}\r\ndeviceService.saveDevice(d).subscribe(()=>{\r\n    console.log('hi');\r\n});*/\r\n\r\n/*\r\nlet id='';\r\nconst requestbody ={\r\n    method:\"\",\r\n    params:\"\"\r\n    \r\n};\r\n\r\ndeviceService.sendOneWayRpcCommand(id,requestbody).subscribe((dta)=>{\r\n    console.log(\"hi\",dta);\r\n});*/\r\n\r\n\r\n\r\n//device info",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "5ef44f61-a5c7-5434-c4b7-1af10b646577"
+              } ]
+            },
+            "configMode" : "advanced",
+            "titleFont" : null,
+            "titleColor" : null,
+            "enableDataExport" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "36de1517-3896-ef38-fbf7-35122fda27b7"
+        }
+      },
+      "states" : {
+        "default" : {
+          "name" : "Dashboard UI 2",
+          "root" : true,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "3c6acfba-580b-99a4-c1a2-e61ea1e191aa" : {
+                  "sizeX" : 7,
+                  "sizeY" : 6,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "36de1517-3896-ef38-fbf7-35122fda27b7" : {
+                  "sizeX" : 24,
+                  "sizeY" : 10,
+                  "row" : 6,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        }
+      },
+      "entityAliases" : {
+        "744c54df-fa62-d42b-ff36-7c3b3341522b" : {
+          "id" : "744c54df-fa62-d42b-ff36-7c3b3341522b",
+          "alias" : "Devices",
+          "filter" : {
+            "type" : "entityType",
+            "resolveMultiple" : true,
+            "entityType" : "DEVICE"
+          }
+        }
+      },
+      "filters" : { },
+      "timewindow" : {
+        "displayValue" : "",
+        "hideInterval" : false,
+        "hideLastInterval" : false,
+        "hideQuickInterval" : false,
+        "hideAggregation" : false,
+        "hideAggInterval" : false,
+        "hideTimezone" : false,
+        "selectedTab" : 0,
+        "realtime" : {
+          "realtimeType" : 0,
+          "interval" : 1000,
+          "timewindowMs" : 60000,
+          "quickInterval" : "CURRENT_DAY"
+        },
+        "history" : {
+          "historyType" : 0,
+          "interval" : 1000,
+          "timewindowMs" : 60000,
+          "fixedTimewindow" : {
+            "startTimeMs" : 1709700321263,
+            "endTimeMs" : 1709786721263
+          },
+          "quickInterval" : "CURRENT_DAY"
+        },
+        "aggregation" : {
+          "type" : "AVG",
+          "limit" : 25000
+        }
+      },
+      "settings" : {
+        "stateControllerId" : "entity",
+        "showTitle" : false,
+        "showDashboardsSelect" : true,
+        "showEntitiesSelect" : true,
+        "showDashboardTimewindow" : true,
+        "showDashboardExport" : true,
+        "toolbarAlwaysOpen" : true
+      }
+    },
+    "customerId" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "DASHBOARD",
+      "id" : "8018f8a0-dc3d-11ee-9604-13ae6f86cc3f"
+    },
+    "image" : null,
+    "mobileHide" : false,
+    "mobileOrder" : null,
+    "name" : "Dashboard UI 2",
+    "ownerId" : null,
+    "title" : "Dashboard UI 2"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

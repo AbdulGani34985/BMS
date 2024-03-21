@@ -1,0 +1,32 @@
+{
+  "entityType" : "WIDGET_TYPE",
+  "entity" : {
+    "fqn" : "_widget_title_latest_values",
+    "name" : " Widget title -Latest values3",
+    "deprecated" : false,
+    "image" : null,
+    "description" : null,
+    "descriptor" : {
+      "type" : "latest",
+      "sizeX" : 10,
+      "sizeY" : 5,
+      "resources" : [ ],
+      "templateHtml" : "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n<meta charset=\"UTF-8\">\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n<title>Custom Widget</title>\r\n</head>\r\n<body>\r\n\r\n<h2>Custom Widget</h2>\r\n\r\n<mat-tab-group style=\"height: 100%;\">\r\n    <mat-tab *ngFor=\"let datasource of datasources; let $dsIndex = index\" label=\"{{datasource.name}}\">\r\n        <form>\r\n            <div *ngFor=\"let dataKeyData of datasourceData[$dsIndex]\">\r\n                <label for=\"{{dataKeyData.dataKey.label}}\">{{dataKeyData.dataKey.label}}:</label>\r\n                <input type=\"text\" id=\"{{dataKeyData.dataKey.label}}\" name=\"{{dataKeyData.dataKey.label}}\"\r\n                    [value]=\"dataKeyData.data[$dataIndex] && dataKeyData.data[$dataIndex][1]\">\r\n            </div>\r\n            <button type=\"submit\">Submit</button>\r\n        </form>\r\n    </mat-tab>\r\n</mat-tab-group>\r\n\r\n</body>\r\n</html>\r\n",
+      "templateCss" : "",
+      "controllerScript" : "self.onInit = function() {\r\n    self.ctx.widgetTitle = 'My first Time-Series widget';\r\n    self.ctx.$scope.datasources = self.ctx.defaultSubscription.datasources;\r\n    self.ctx.$scope.data = self.ctx.defaultSubscription.data;\r\n\r\n    console.log(\"self.ctx.defaultSubscription.datasources\");\r\n    console.log(self.ctx.defaultSubscription.datasources);\r\n    console.log(\"self.ctx.defaultSubscription.data\");\r\n    console.log(self.ctx.defaultSubscription.data);\r\n    // console.log(\"\");\r\n    // console.log();\r\n    self.ctx.$scope.datasourceData = [];\r\n\r\n    var currentDatasource = null;\r\n    var currentDatasourceIndex = -1;\r\n\r\n    for (var i=0;i<self.ctx.$scope.data.length;i++) {\r\n        var dataKeyData = self.ctx.$scope.data[i];\r\n        if (dataKeyData.datasource != currentDatasource) {\r\n            currentDatasource = dataKeyData.datasource\r\n            currentDatasourceIndex++;\r\n            self.ctx.$scope.datasourceData[currentDatasourceIndex] = [];\r\n\r\n        }\r\n        self.ctx.$scope.datasourceData[currentDatasourceIndex].push(dataKeyData);\r\n    }\r\n    self.ctx.updateWidgetParams();\r\n\r\n}\r\n\r\nself.onDataUpdated = function() {\r\n    self.ctx.detectChanges();\r\n}",
+      "settingsSchema" : "{}",
+      "dataKeySettingsSchema" : "{}\n",
+      "defaultConfig" : "{\"datasources\":[{\"type\":\"function\",\"name\":\"function\",\"dataKeys\":[{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"Random\",\"color\":\"#2196f3\",\"settings\":{},\"_hash\":0.15479322438769105,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"}]}],\"timewindow\":{\"realtime\":{\"timewindowMs\":60000}},\"showTitle\":true,\"backgroundColor\":\"#fff\",\"color\":\"rgba(0, 0, 0, 0.87)\",\"padding\":\"8px\",\"settings\":{},\"title\":\"Attributes card\"}"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "WIDGET_TYPE",
+      "id" : "72ae5c90-e1d4-11ee-96aa-c12be68b6d4d"
+    },
+    "tags" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

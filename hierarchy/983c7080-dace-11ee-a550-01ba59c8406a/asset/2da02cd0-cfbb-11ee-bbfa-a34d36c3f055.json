@@ -1,0 +1,184 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "2a942550-cfbb-11ee-a2dd-dda04d5a084f"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "983c7080-dace-11ee-a550-01ba59c8406a"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "2da02cd0-cfbb-11ee-bbfa-a34d36c3f055"
+    },
+    "label" : null,
+    "name" : "Bed Room",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "983c7080-dace-11ee-a550-01ba59c8406a"
+    },
+    "type" : "Room"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "01dc1aa0-cfbb-11ee-bbfa-a34d36c3f055"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "2da02cd0-cfbb-11ee-bbfa-a34d36c3f055"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "2da02cd0-cfbb-11ee-bbfa-a34d36c3f055"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "9728ca00-cfbf-11ee-bbfa-a34d36c3f055"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "2da02cd0-cfbb-11ee-bbfa-a34d36c3f055"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "b4383630-cfbf-11ee-b58c-478d284d7818"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "2da02cd0-cfbb-11ee-bbfa-a34d36c3f055"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "ce9f65c0-cfbf-11ee-a2dd-dda04d5a084f"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "2da02cd0-cfbb-11ee-bbfa-a34d36c3f055"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "db262f40-cfbf-11ee-bbfa-a34d36c3f055"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "2da02cd0-cfbb-11ee-bbfa-a34d36c3f055"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "e6cd2010-cfbf-11ee-b58c-478d284d7818"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "2da02cd0-cfbb-11ee-bbfa-a34d36c3f055"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "51779a40-cfbf-11ee-b58c-478d284d7818"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "2da02cd0-cfbb-11ee-bbfa-a34d36c3f055"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "77bcf740-cfbf-11ee-a2dd-dda04d5a084f"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : 11.37,
+      "jsonValue" : null,
+      "key" : "acLevel",
+      "lastUpdateTs" : 1709622879548,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "enabledAC",
+      "lastUpdateTs" : 1709634821821,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "enabledFan",
+      "lastUpdateTs" : 1709617317141,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "enabledLight",
+      "lastUpdateTs" : 1709617414626,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "enabledPower",
+      "lastUpdateTs" : 1709617343313,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.6115469787427302,
+      "jsonValue" : null,
+      "key" : "xPos",
+      "lastUpdateTs" : 1708424509946,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.7946217008797655,
+      "jsonValue" : null,
+      "key" : "yPos",
+      "lastUpdateTs" : 1708424509946,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

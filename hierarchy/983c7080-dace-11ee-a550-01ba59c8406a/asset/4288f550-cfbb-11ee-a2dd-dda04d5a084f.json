@@ -1,0 +1,208 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "2a942550-cfbb-11ee-a2dd-dda04d5a084f"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "983c7080-dace-11ee-a550-01ba59c8406a"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "4288f550-cfbb-11ee-a2dd-dda04d5a084f"
+    },
+    "label" : null,
+    "name" : "Kitchen Room",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "983c7080-dace-11ee-a550-01ba59c8406a"
+    },
+    "type" : "Room"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "01dc1aa0-cfbb-11ee-bbfa-a34d36c3f055"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "4288f550-cfbb-11ee-a2dd-dda04d5a084f"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4288f550-cfbb-11ee-a2dd-dda04d5a084f"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "88a32dd0-cfc0-11ee-a2dd-dda04d5a084f"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4288f550-cfbb-11ee-a2dd-dda04d5a084f"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "92d8b450-cfc0-11ee-b58c-478d284d7818"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4288f550-cfbb-11ee-a2dd-dda04d5a084f"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "9d46d700-cfc0-11ee-a550-01ba59c8406a"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4288f550-cfbb-11ee-a2dd-dda04d5a084f"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "ac0c45e0-cfc0-11ee-a922-37ae9eb95d8c"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4288f550-cfbb-11ee-a2dd-dda04d5a084f"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "b465b960-cfc0-11ee-b58c-478d284d7818"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4288f550-cfbb-11ee-a2dd-dda04d5a084f"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "bc8a3a30-cfc0-11ee-a922-37ae9eb95d8c"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4288f550-cfbb-11ee-a2dd-dda04d5a084f"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "c3ae6200-cfc0-11ee-a922-37ae9eb95d8c"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4288f550-cfbb-11ee-a2dd-dda04d5a084f"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "e506e840-d610-11ee-a922-37ae9eb95d8c"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "4288f550-cfbb-11ee-a2dd-dda04d5a084f"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "7aa46b00-d5fa-11ee-a922-37ae9eb95d8c"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : 13.84,
+      "jsonValue" : null,
+      "key" : "acLevel",
+      "lastUpdateTs" : 1709623010868,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "enabledAC",
+      "lastUpdateTs" : 1709617317119,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "enabledFan",
+      "lastUpdateTs" : 1709617317119,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "enabledLight",
+      "lastUpdateTs" : 1709617442197,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "enabledPower",
+      "lastUpdateTs" : 1709617343317,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.1878529730072471,
+      "jsonValue" : null,
+      "key" : "xPos",
+      "lastUpdateTs" : 1709009195603,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.431676853620954,
+      "jsonValue" : null,
+      "key" : "yPos",
+      "lastUpdateTs" : 1709009195603,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

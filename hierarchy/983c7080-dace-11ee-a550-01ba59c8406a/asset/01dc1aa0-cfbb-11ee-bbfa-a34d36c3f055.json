@@ -1,0 +1,112 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "fc0385a0-cfba-11ee-a2dd-dda04d5a084f"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "983c7080-dace-11ee-a550-01ba59c8406a"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "01dc1aa0-cfbb-11ee-bbfa-a34d36c3f055"
+    },
+    "label" : null,
+    "name" : "Building A",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "983c7080-dace-11ee-a550-01ba59c8406a"
+    },
+    "type" : "Building"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "01dc1aa0-cfbb-11ee-bbfa-a34d36c3f055"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "c2016490-cfdc-11ee-a550-01ba59c8406a"
+    },
+    "type" : "Manages",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "01dc1aa0-cfbb-11ee-bbfa-a34d36c3f055"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "2da02cd0-cfbb-11ee-bbfa-a34d36c3f055"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "01dc1aa0-cfbb-11ee-bbfa-a34d36c3f055"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "375c3d90-cfbb-11ee-b58c-478d284d7818"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "01dc1aa0-cfbb-11ee-bbfa-a34d36c3f055"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "4288f550-cfbb-11ee-a2dd-dda04d5a084f"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "address",
+      "lastUpdateTs" : 1708417780258,
+      "longValue" : null,
+      "strValue" : "123 Main Street, New Delhi, India"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "imageUrl",
+      "lastUpdateTs" : 1708423816493,
+      "longValue" : null,
+      "strValue" : "https://imgs.search.brave.com/rz-d3PdIiZWo_9-ys-woCOKUYwTaWrr-_kXDogYL208/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93cG1l/ZGlhLnJvb21za2V0/Y2hlci5jb20vY29u/dGVudC91cGxvYWRz/LzIwMjEvMTIvMTQx/NTQ3MjMvUm9vbVNr/ZXRjaGVyLUhvbWUt/RGVzaWduZXItQ3Vz/dG9tLTNELUZsb29y/LVBsYW4uanBn"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 28.6310726247325,
+      "jsonValue" : null,
+      "key" : "latitude",
+      "lastUpdateTs" : 1709014246761,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 77.22183511268628,
+      "jsonValue" : null,
+      "key" : "longitude",
+      "lastUpdateTs" : 1709014246761,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "entityType" : "WIDGET_TYPE",
+  "entity" : {
+    "fqn" : "_subs_of_counting",
+    "name" : "-subs  of counting",
+    "deprecated" : false,
+    "image" : null,
+    "description" : null,
+    "descriptor" : {
+      "type" : "static",
+      "sizeX" : 7.5,
+      "sizeY" : 3,
+      "resources" : [ ],
+      "templateHtml" : "",
+      "templateCss" : "",
+      "controllerScript" : "self.onInit = function() {\r\n    \r\n    const datasources = [\r\n        {\r\n            type: \"entity\", //Sets that there is a subscription to entity data\r\n            dataKeys: //Describes keys\r\n            [\r\n                {\r\n                    decimals: 0, //Number of digits after floating point for this key\r\n                    label: \"Temperature\", //Key label\r\n                    name: \"temperature\", //Key name\r\n                    settings: {},\r\n                    type: \"timeseries\" //Key type\r\n                },\r\n                {\r\n                    decimals: 0,\r\n                    label: \"Active\",\r\n                    name: \"active\",\r\n                    settings: {},\r\n                    type: \"attribute\"\r\n                 }\r\n            ],\r\n            entityFilter: //Describes entities (See Entity Filters topic)\r\n            {\r\n                type: \"entityType\", //Entity filter type\r\n                entityType: \"DEVICE\" //Entity type\r\n            },\r\n            keyFilters: //Filtering entity by keys (See Key Filters topic)\r\n            [\r\n                {\r\n                    key: {\r\n                        key: \"active\", //Key name\r\n                        type: \"ATTRIBUTE\" //Key type\r\n                    },\r\n                    predicate: {\r\n                        operation: \"EQUAL\", //Operation type (You can find full list of operations in Key Filters topic)\r\n                        type: \"BOOLEAN\", //Sorting value type\r\n                        value: {\r\n                            defaultValue: true //Sorting value\r\n                        }\r\n                    },\r\n                    valueType: \"BOOLEAN\" //Value type\r\n                }\r\n            ]\r\n        }\r\n    ];\r\n\r\n    const subscriptionOptions = {\r\n        type: 'latest', //Subscription type\r\n        datasources: datasources, //Describes what data you want to subscribe\r\n        callbacks: //Sets callbacks for subscription\r\n        {\r\n            onDataUpdated: () => {\r\n                self.onDataUpdated();\r\n            }\r\n        }\r\n    };\r\n\r\n    self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(\r\n        (subscription) => {\r\n            self.ctx.defaultSubscription = subscription; //Saving subscription information into widget context\r\n            self.ctx.data = subscription.data; //Saving data into widget context\r\n            self.ctx.datasources = subscription.datasources; //Saving datasource into widget context\r\n            \r\n        }\r\n    );\r\n   \r\n}\r\n",
+      "settingsSchema" : "",
+      "dataKeySettingsSchema" : "",
+      "settingsDirective" : "tb-html-card-widget-settings",
+      "defaultConfig" : "{\"datasources\":[{\"type\":\"static\",\"name\":\"function\",\"dataKeys\":[{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"Random\",\"color\":\"#2196f3\",\"settings\":{},\"_hash\":0.15479322438769105,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"}]}],\"timewindow\":{\"realtime\":{\"timewindowMs\":60000}},\"showTitle\":false,\"backgroundColor\":\"rgb(255, 255, 255)\",\"color\":\"rgba(0, 0, 0, 0.87)\",\"padding\":\"8px\",\"settings\":{\"cardHtml\":\"<div class='card'>HTML code here</div>\",\"cardCss\":\".card {\\n    font-weight: bold;\\n    font-size: 32px;\\n    color: #999;\\n    width: 100%;\\n    height: 100%;\\n    display: flex;\\n    align-items: center;\\n    justify-content: center;\\n}\"},\"title\":\"HTML Card\",\"dropShadow\":true}"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "WIDGET_TYPE",
+      "id" : "85395950-e742-11ee-938e-39f3bc48828c"
+    },
+    "tags" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

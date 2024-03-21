@@ -1,0 +1,38 @@
+{
+  "entityType" : "WIDGET_TYPE",
+  "entity" : {
+    "fqn" : "timeseries3",
+    "name" : "timeseries3",
+    "deprecated" : false,
+    "image" : null,
+    "description" : null,
+    "descriptor" : {
+      "type" : "timeseries",
+      "sizeX" : 9,
+      "sizeY" : 6,
+      "resources" : [ ],
+      "templateHtml" : "<mat-tab-group style=\"height: 100%;\">\r\n    <mat-tab\r\n        *ngFor=\"let datasource of datasources; let $dsIndex = index\"\r\n        label=\"{{datasource.name}}\">\r\n        <table class=\"my-data-table\" style=\"width: 100%;\">\r\n            <thead>\r\n                <tr>\r\n                    <th\r\n                        *ngFor=\"let dataKeyData of datasourceData[$dsIndex]\">\r\n                        {{dataKeyData.dataKey.label}}</th>\r\n                <tr>\r\n            </thead>\r\n            <tbody>\r\n                <tr\r\n                    *ngFor=\"let data of datasourceData[$dsIndex][0].data; let $dataIndex = index\">\r\n                    <td\r\n                        *ngFor=\"let dataKeyData of datasourceData[$dsIndex]\">\r\n                        {{dataKeyData.data[$dataIndex] && dataKeyData.data[$dataIndex][1]}}\r\n                    </td>\r\n                </tr>\r\n            </tbody>\r\n        </table>\r\n    </mat-tab>\r\n</mat-tab-group>",
+      "templateCss" : ".my-data-table th {\r\n    text-align: left;\r\n}",
+      "controllerScript" : "self.onInit = function() {\r\n    self.ctx.widgetTitle = 'My first Time-Series widget';\r\n    self.ctx.$scope.datasources = self.ctx.defaultSubscription.datasources;\r\n    self.ctx.$scope.data = self.ctx.defaultSubscription.data;\r\n\r\n    console.log(\"self.ctx.defaultSubscription.datasources\");\r\n    console.log(self.ctx.defaultSubscription.datasources);\r\n    console.log(\"self.ctx.defaultSubscription.data\");\r\n    console.log(self.ctx.defaultSubscription.data);\r\n    // console.log(\"\");\r\n    // console.log();\r\n    self.ctx.$scope.datasourceData = [];\r\n\r\n    var currentDatasource = null;\r\n    var currentDatasourceIndex = -1;\r\n\r\n    for (var i=0;i<self.ctx.$scope.data.length;i++) {\r\n        var dataKeyData = self.ctx.$scope.data[i];\r\n        if (dataKeyData.datasource != currentDatasource) {\r\n            currentDatasource = dataKeyData.datasource\r\n            currentDatasourceIndex++;\r\n            self.ctx.$scope.datasourceData[currentDatasourceIndex] = [];\r\n\r\n        }\r\n        self.ctx.$scope.datasourceData[currentDatasourceIndex].push(dataKeyData);\r\n    }\r\n    self.ctx.updateWidgetParams();\r\n\r\n}\r\n\r\nself.onDataUpdated = function() {\r\n    self.ctx.detectChanges();\r\n}",
+      "settingsSchema" : "{}",
+      "dataKeySettingsSchema" : "{}",
+      "latestDataKeySettingsSchema" : "{}",
+      "settingsDirective" : "tb-flot-line-widget-settings",
+      "dataKeySettingsDirective" : "tb-flot-line-key-settings",
+      "latestDataKeySettingsDirective" : "tb-flot-latest-key-settings",
+      "hasBasicMode" : true,
+      "basicModeDirective" : "tb-flot-basic-config",
+      "defaultConfig" : "{\"datasources\":[{\"type\":\"function\",\"name\":\"function\",\"dataKeys\":[{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"First\",\"color\":\"#2196f3\",\"settings\":{\"showLines\":true,\"fillLines\":true,\"showPoints\":false},\"_hash\":0.8587686344902596,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"},{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"Second\",\"color\":\"#ffc107\",\"settings\":{\"showLines\":true,\"fillLines\":false,\"showPoints\":false},\"_hash\":0.12775350966079668,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"}]}],\"timewindow\":{\"realtime\":{\"timewindowMs\":60000}},\"showTitle\":true,\"backgroundColor\":\"#fff\",\"color\":\"rgba(0, 0, 0, 0.87)\",\"padding\":\"8px\",\"settings\":{\"stack\":false,\"fontSize\":10,\"fontColor\":\"#545454\",\"showTooltip\":true,\"tooltipIndividual\":false,\"tooltipCumulative\":false,\"hideZeros\":false,\"grid\":{\"verticalLines\":true,\"horizontalLines\":true,\"outlineWidth\":1,\"color\":\"#545454\",\"backgroundColor\":null,\"tickColor\":\"#DDDDDD\"},\"xaxis\":{\"title\":null,\"showLabels\":true,\"color\":\"#545454\"},\"yaxis\":{\"min\":null,\"max\":null,\"title\":null,\"showLabels\":true,\"color\":\"#545454\",\"tickSize\":null,\"tickDecimals\":0,\"ticksFormatter\":\"\"},\"shadowSize\":4,\"smoothLines\":false,\"comparisonEnabled\":false,\"xaxisSecond\":{\"axisPosition\":\"top\",\"title\":null,\"showLabels\":true},\"showLegend\":true,\"legendConfig\":{\"direction\":\"column\",\"position\":\"bottom\",\"sortDataKeys\":false,\"showMin\":false,\"showMax\":false,\"showAvg\":true,\"showTotal\":false,\"showLatest\":false},\"customLegendEnabled\":false},\"title\":\"timeseries3\",\"dropShadow\":true,\"enableFullscreen\":true,\"titleStyle\":{\"fontSize\":\"16px\",\"fontWeight\":400},\"mobileHeight\":null,\"configMode\":\"basic\",\"actions\":{},\"showTitleIcon\":false,\"titleIcon\":\"thermostat\",\"iconColor\":\"#1F6BDD\"}"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "WIDGET_TYPE",
+      "id" : "8cd20ed0-e5d7-11ee-96aa-c12be68b6d4d"
+    },
+    "tags" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

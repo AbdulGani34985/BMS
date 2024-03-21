@@ -1,0 +1,36 @@
+{
+  "entityType" : "WIDGET_TYPE",
+  "entity" : {
+    "fqn" : "_alarm_widget",
+    "name" : "-alarm widget",
+    "deprecated" : false,
+    "image" : null,
+    "description" : null,
+    "descriptor" : {
+      "type" : "alarm",
+      "sizeX" : 12.5,
+      "sizeY" : 6.5,
+      "resources" : [ ],
+      "templateHtml" : " <div fxFlex fxLayout=\"column\" style=\"height: 100%;\">\r\n      <div>My first Alarm widget.</div>\r\n      <table class=\"my-alarm-table\" style=\"width: 100%;\">\r\n          <thead>\r\n              <tr>\r\n                  <th *ngFor=\"let dataKey of alarmSource?.dataKeys\">{{dataKey.label}}</th>\r\n              <tr>\r\n          </thead>\r\n          <tbody>\r\n              <tr *ngFor=\"let alarm of alarms\">\r\n                  <td *ngFor=\"let dataKey of alarmSource?.dataKeys\"\r\n                      [ngStyle]=\"getAlarmCellStyle(alarm, dataKey)\">\r\n                      {{getAlarmValue(alarm, dataKey)}}\r\n                  </td>\r\n              </tr>\r\n          </tbody>\r\n      </table>\r\n  </div>",
+      "templateCss" : ".my-alarm-table th {\r\n    text-align: left;\r\n}",
+      "controllerScript" : "self.onInit = function() {\r\n    var pageLink = self.ctx.pageLink(100);\r\n\r\n    pageLink.typeList = self.ctx.widgetConfig.alarmTypeList;\r\n    pageLink.statusList = self.ctx.widgetConfig.alarmStatusList;\r\n    pageLink.severityList = self.ctx.widgetConfig.alarmSeverityList;\r\n    pageLink.searchPropagatedAlarms = self.ctx.widgetConfig.searchPropagatedAlarms;\r\n\r\n    self.ctx.defaultSubscription.subscribeForAlarms(pageLink, null);\r\n    self.ctx.$scope.alarmSource = self.ctx.defaultSubscription.alarmSource;\r\n\r\n    var alarmSeverityColorFunctionBody = self.ctx.settings.alarmSeverityColorFunction;\r\n    if (typeof alarmSeverityColorFunctionBody === 'undefined' || !alarmSeverityColorFunctionBody.length) {\r\n        alarmSeverityColorFunctionBody = \"if(severity == 'CRITICAL') {return 'red';} else if (severity == 'MAJOR') {return 'orange';} else return 'green';\";\r\n    }\r\n\r\n    var alarmSeverityColorFunction = null;\r\n    try {\r\n        alarmSeverityColorFunction = new Function('severity', alarmSeverityColorFunctionBody);\r\n    } catch (e) {\r\n        alarmSeverityColorFunction = null;\r\n    }\r\n\r\n    self.ctx.$scope.getAlarmValue = function(alarm, dataKey) {\r\n        var alarmKey = dataKey.name;\r\n        if (alarmKey === 'originator') {\r\n            alarmKey = 'originatorName';\r\n        }\r\n        var value = alarm[alarmKey];\r\n        if (alarmKey === 'createdTime') {\r\n            return self.ctx.date.transform(value, 'yyyy-MM-dd HH:mm:ss');\r\n        } else {\r\n            return value;\r\n        }\r\n    }\r\n\r\n    self.ctx.$scope.getAlarmCellStyle = function(alarm, dataKey) {\r\n        var alarmKey = dataKey.name;\r\n        if (alarmKey === 'severity' && alarmSeverityColorFunction) {\r\n            var severity = alarm[alarmKey];\r\n            var color = alarmSeverityColorFunction(severity);\r\n            return {\r\n                color: color  \r\n            };\r\n        } \r\n        return {};\r\n    }\r\n}\r\n\r\nself.onDataUpdated = function() {\r\n    self.ctx.$scope.alarms = self.ctx.defaultSubscription.alarms.data;\r\n    self.ctx.detectChanges();\r\n}",
+      "settingsSchema" : "{\r\n    \"schema\": {\r\n        \"type\": \"object\",\r\n        \"title\": \"AlarmTableSettings\",\r\n        \"properties\": {\r\n            \"alarmSeverityColorFunction\": {\r\n                \"title\": \"Alarm severity color function: f(severity)\",\r\n                \"type\": \"string\",\r\n                \"default\": \"if(severity == 'CRITICAL') {return 'red';} else if (severity == 'MAJOR') {return 'orange';} else return 'green'; \"\r\n            }\r\n        },\r\n        \"required\": []\r\n    },\r\n    \"form\": [\r\n        {\r\n            \"key\": \"alarmSeverityColorFunction\",\r\n            \"type\": \"javascript\"\r\n        }\r\n    ]\r\n}",
+      "dataKeySettingsSchema" : "",
+      "settingsDirective" : "tb-alarms-table-widget-settings",
+      "dataKeySettingsDirective" : "tb-alarms-table-key-settings",
+      "hasBasicMode" : true,
+      "basicModeDirective" : "tb-alarms-table-basic-config",
+      "defaultConfig" : "{\"timewindow\":{\"realtime\":{\"interval\":1000,\"timewindowMs\":86400000},\"aggregation\":{\"type\":\"NONE\",\"limit\":200}},\"showTitle\":true,\"backgroundColor\":\"rgb(255, 255, 255)\",\"color\":\"rgba(0, 0, 0, 0.87)\",\"padding\":\"4px\",\"settings\":{\"enableSelection\":true,\"enableSearch\":true,\"displayDetails\":true,\"allowAcknowledgment\":true,\"allowClear\":true,\"allowAssign\":true,\"displayActivity\":true,\"displayPagination\":true,\"defaultPageSize\":10,\"defaultSortOrder\":\"-createdTime\",\"enableSelectColumnDisplay\":true,\"enableStickyAction\":false,\"enableFilter\":true,\"entitiesTitle\":null,\"alarmsTitle\":\"Alarms\"},\"title\":\"Alarms table\",\"dropShadow\":true,\"enableFullscreen\":true,\"titleStyle\":{\"fontSize\":\"16px\",\"fontWeight\":400,\"padding\":\"5px 10px 5px 10px\"},\"useDashboardTimewindow\":false,\"showLegend\":false,\"alarmSource\":{\"type\":\"function\",\"dataKeys\":[{\"name\":\"createdTime\",\"type\":\"alarm\",\"label\":\"Created time\",\"color\":\"#2196f3\",\"settings\":{\"useCellStyleFunction\":false,\"cellStyleFunction\":\"\",\"useCellContentFunction\":false,\"cellContentFunction\":\"\"},\"_hash\":0.021092237451093787},{\"name\":\"originator\",\"type\":\"alarm\",\"label\":\"Originator\",\"color\":\"#4caf50\",\"settings\":{\"useCellStyleFunction\":false,\"cellStyleFunction\":\"\",\"useCellContentFunction\":false,\"cellContentFunction\":\"\"},\"_hash\":0.2780007688856758},{\"name\":\"type\",\"type\":\"alarm\",\"label\":\"Type\",\"color\":\"#f44336\",\"settings\":{\"useCellStyleFunction\":false,\"cellStyleFunction\":\"\",\"useCellContentFunction\":false,\"cellContentFunction\":\"\"},\"_hash\":0.7323586880398418},{\"name\":\"severity\",\"type\":\"alarm\",\"label\":\"Severity\",\"color\":\"#ffc107\",\"settings\":{\"useCellStyleFunction\":false,\"useCellContentFunction\":false},\"_hash\":0.09927019860088193},{\"name\":\"status\",\"type\":\"alarm\",\"label\":\"Status\",\"color\":\"#607d8b\",\"settings\":{\"useCellStyleFunction\":false,\"cellStyleFunction\":\"\",\"useCellContentFunction\":false,\"cellContentFunction\":\"\"},\"_hash\":0.6588418951443418},{\"name\":\"assignee\",\"type\":\"alarm\",\"label\":\"Assignee\",\"color\":\"#9c27b0\",\"settings\":{},\"_hash\":0.5008441077416634}],\"entityAliasId\":null,\"name\":\"alarms\"},\"alarmSearchStatus\":\"ANY\",\"alarmsPollingInterval\":5,\"showTitleIcon\":false,\"titleIcon\":\"warning\",\"iconColor\":\"rgba(0, 0, 0, 0.87)\",\"iconSize\":\"24px\",\"titleTooltip\":\"\",\"widgetStyle\":{},\"displayTimewindow\":true,\"actions\":{},\"alarmStatusList\":[],\"alarmSeverityList\":[],\"alarmTypeList\":[],\"searchPropagatedAlarms\":false,\"configMode\":\"basic\",\"alarmFilterConfig\":null}"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "WIDGET_TYPE",
+      "id" : "f08c7db0-e51f-11ee-8e3e-3ff65f8b3cad"
+    },
+    "tags" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}
