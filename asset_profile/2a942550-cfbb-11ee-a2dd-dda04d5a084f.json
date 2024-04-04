@@ -5,9 +5,15 @@
     "defaultDashboardId" : null,
     "defaultEdgeRuleChainId" : null,
     "defaultQueueName" : null,
-    "defaultRuleChainId" : null,
+    "defaultRuleChainId" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "98a0b640-cfba-11ee-b58c-478d284d7818"
+    },
     "description" : null,
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "2a942550-cfbb-11ee-a2dd-dda04d5a084f"
+    },
     "id" : {
       "entityType" : "ASSET_PROFILE",
       "id" : "2a942550-cfbb-11ee-a2dd-dda04d5a084f"

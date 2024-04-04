@@ -22,7 +22,10 @@
       "entityType" : "DEVICE_PROFILE",
       "id" : "b34300c0-cfbf-11ee-b58c-478d284d7818"
     },
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "DEVICE",
+      "id" : "b4383630-cfbf-11ee-b58c-478d284d7818"
+    },
     "firmwareId" : null,
     "id" : {
       "entityType" : "DEVICE",
@@ -38,7 +41,7 @@
     "type" : "Energy"
   },
   "credentials" : {
-    "credentialsId" : "fkVH5CeKVZVlKl6fwo11",
+    "credentialsId" : "uJr1MUbas5aDAGHBnvMJ",
     "credentialsType" : "ACCESS_TOKEN",
     "credentialsValue" : null
   },
@@ -61,7 +64,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "active",
-      "lastUpdateTs" : 1708490031192,
+      "lastUpdateTs" : 1711014430911,
       "longValue" : null,
       "strValue" : null
     }, {

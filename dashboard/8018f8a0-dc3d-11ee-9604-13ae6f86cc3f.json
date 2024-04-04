@@ -376,7 +376,10 @@
       }
     },
     "customerId" : null,
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "DASHBOARD",
+      "id" : "8018f8a0-dc3d-11ee-9604-13ae6f86cc3f"
+    },
     "id" : {
       "entityType" : "DASHBOARD",
       "id" : "8018f8a0-dc3d-11ee-9604-13ae6f86cc3f"

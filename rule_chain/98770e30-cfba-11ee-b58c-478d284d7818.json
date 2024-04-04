@@ -4,7 +4,10 @@
     "additionalInfo" : null,
     "configuration" : null,
     "debugMode" : false,
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "98770e30-cfba-11ee-b58c-478d284d7818"
+    },
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
       "id" : "98786dc0-cfba-11ee-b58c-478d284d7818"
@@ -62,8 +65,8 @@
           "type" : "pdf",
           "timezone" : "Europe/Kiev",
           "useCurrentUserCredentials" : true,
-          "userId" : "7c82bf30-4d61-11e8-ad73-455e6191039d",
-          "dashboardId" : "62097e80-6fa0-11e8-9b36-a959bde06125"
+          "userId" : "013b8300-e763-11ee-9d78-27edb85da3c3",
+          "dashboardId" : "013b8300-e763-11ee-9d78-27edb85da3c3"
         }
       },
       "configurationVersion" : 0,
@@ -75,6 +78,7 @@
         "id" : "98786dc0-cfba-11ee-b58c-478d284d7818"
       },
       "name" : "Generate Report",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.report.TbGenerateReportNode"
@@ -97,6 +101,7 @@
         "id" : "98793111-cfba-11ee-b58c-478d284d7818"
       },
       "name" : "If send email",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
@@ -119,6 +124,7 @@
         "id" : "9879cd50-cfba-11ee-b58c-478d284d7818"
       },
       "name" : "Prepare email metadata",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -144,6 +150,7 @@
         "id" : "987a4280-cfba-11ee-b58c-478d284d7818"
       },
       "name" : "To report email",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.mail.TbMsgToEmailNode"
@@ -171,6 +178,7 @@
         "id" : "987adec0-cfba-11ee-b58c-478d284d7818"
       },
       "name" : "Send report",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.mail.TbSendEmailNode"
@@ -192,6 +200,7 @@
         "id" : "987b53f0-cfba-11ee-b58c-478d284d7818"
       },
       "name" : "ACK generate report",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbAckNode"

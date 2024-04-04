@@ -3,7 +3,10 @@
   "entity" : {
     "alias" : "my_first_widget_bundle",
     "description" : null,
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "WIDGETS_BUNDLE",
+      "id" : "77b4c9f0-e1d3-11ee-aedd-33f1c759bdb2"
+    },
     "id" : {
       "entityType" : "WIDGETS_BUNDLE",
       "id" : "77b4c9f0-e1d3-11ee-aedd-33f1c759bdb2"
@@ -13,7 +16,7 @@
     "order" : null,
     "title" : "My first widget bundle"
   },
-  "fqns" : [ "_widget_title_latest_values", "_time_series", "_control_widget", "_alarm_widget", "timeser2", "timeseries3", "latest4", "_static_widget", "_subs_of_counting" ],
+  "fqns" : [ "_widget_title_latest_values", "_time_series", "_control_widget", "_alarm_widget", "timeser2", "timeseries3", "latest4", "_static_widget", "_subs_of_counting", "subs_for_telemetry_and_attribute", "subs_with_pagelink", "gauge1js", "chart1js" ],
   "relations" : [ ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]

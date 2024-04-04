@@ -22,7 +22,10 @@
       "entityType" : "DEVICE_PROFILE",
       "id" : "9855f1a0-cfba-11ee-b58c-478d284d7818"
     },
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "DEVICE",
+      "id" : "fddda2d0-d6cb-11ee-bbfa-a34d36c3f055"
+    },
     "firmwareId" : null,
     "id" : {
       "entityType" : "DEVICE",
@@ -38,7 +41,7 @@
     "type" : "default"
   },
   "credentials" : {
-    "credentialsId" : "Kl1F2rfSj8hdejtLzOB4",
+    "credentialsId" : "AmyM7hbm6JLY46mu7UMe",
     "credentialsType" : "ACCESS_TOKEN",
     "credentialsValue" : null
   },
@@ -49,7 +52,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "active",
-      "lastUpdateTs" : 1709823424812,
+      "lastUpdateTs" : 1711438647318,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -57,32 +60,32 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "inactivityAlarmTime",
-      "lastUpdateTs" : 1709823424812,
-      "longValue" : 1709823424812,
+      "lastUpdateTs" : 1711438647318,
+      "longValue" : 1711438647315,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastActivityTime",
-      "lastUpdateTs" : 1709822776927,
-      "longValue" : 1709822774290,
+      "lastUpdateTs" : 1711438040537,
+      "longValue" : 1711438038965,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastConnectTime",
-      "lastUpdateTs" : 1709822774286,
-      "longValue" : 1709822774286,
+      "lastUpdateTs" : 1711433304221,
+      "longValue" : 1711433304221,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastDisconnectTime",
-      "lastUpdateTs" : 1709823076354,
-      "longValue" : 1709823076354,
+      "lastUpdateTs" : 1711438038971,
+      "longValue" : 1711438038971,
       "strValue" : null
     } ],
     "SHARED_SCOPE" : [ ]

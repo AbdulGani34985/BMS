@@ -1957,7 +1957,10 @@
       }
     },
     "customerId" : null,
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "DASHBOARD",
+      "id" : "8f8e5840-db19-11ee-9cc4-c373e112d9e6"
+    },
     "id" : {
       "entityType" : "DASHBOARD",
       "id" : "8f8e5840-db19-11ee-9cc4-c373e112d9e6"

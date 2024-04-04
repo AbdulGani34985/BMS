@@ -6,10 +6,13 @@
     },
     "configuration" : null,
     "debugMode" : true,
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "c8065c50-d564-11ee-a2dd-dda04d5a084f"
+    },
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
-      "id" : "8af18cc0-e68c-11ee-bbcd-db2b8a72833a"
+      "id" : "f7812db1-e767-11ee-9d78-27edb85da3c3"
     },
     "id" : {
       "entityType" : "RULE_CHAIN",
@@ -174,19 +177,19 @@
         "scriptLang" : "JS",
         "jsScript" : "\nfunction generateRandomData(min, max) {\n    // Generate a random value between min and max\n    let randomValue = Math.random() * (max - min) + min;\n\n    return randomValue;\n}\n\nvar newmsg = {energy:generateRandomData(100,150) };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: newmsg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "\nfunction generateRandomData(min, max) {\n    // Generate a random value between min and max\n    let randomValue = Math.random() * (max - min) + min;\n\n    return randomValue;\n}\n\nvar newmsg = {energy:generateRandomData(100,150) };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: newmsg, metadata: metadata, msgType: msgType };",
-        "queueName" : null,
         "originatorId" : "b4383630-cfbf-11ee-b58c-478d284d7818",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "f84ce960-d564-11ee-a550-01ba59c8406a"
+        "id" : "f77c72c0-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Bed Room Energy Meter",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -202,19 +205,19 @@
         "scriptLang" : "JS",
         "jsScript" : "\nfunction generateRandomData(min, max) {\n    // Generate a random value between min and max\n    let randomValue = Math.random() * (max - min) + min;\n\n    return randomValue;\n}\n\nvar newmsg = {humidity:generateRandomData(10,30) };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: newmsg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "queueName" : null,
         "originatorId" : "9728ca00-cfbf-11ee-bbfa-a34d36c3f055",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "60626e90-d569-11ee-bbfa-a34d36c3f055"
+        "id" : "f77ce7f0-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Bed Room Humidity Sensor",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -230,19 +233,19 @@
         "scriptLang" : "JS",
         "jsScript" : "\nfunction generateRandomData(min, max) {\n    // Generate a random value between min and max\n    let randomValue = Math.random() * (max - min) + min;\n\n    return randomValue;\n}\n\nvar newmsg = {temperature:generateRandomData(25,30) };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: newmsg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "queueName" : null,
         "originatorId" : "77bcf740-cfbf-11ee-a2dd-dda04d5a084f",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "fc952820-d569-11ee-a2dd-dda04d5a084f"
+        "id" : "f77ce7f1-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Bed Room Thermostat",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -258,19 +261,19 @@
         "scriptLang" : "JS",
         "jsScript" : "\n// function generateRandomData(min, max) {\n//     // Generate a random value between min and max\n//     let randomValue = Math.random() * (max - min) + min;\n\n//     return randomValue;\n// }\n\nfunction getRandomInt(min, max) {\n  min = Math.ceil(min);\n  max = Math.floor(max);\n  return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\nvar newmsg = {occupancy:getRandomInt(1,7) };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: newmsg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "queueName" : null,
         "originatorId" : "51779a40-cfbf-11ee-b58c-478d284d7818",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "fc9687b0-d569-11ee-a2dd-dda04d5a084f"
+        "id" : "f77d0f00-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Bed Room Occupancy Sensor",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -304,9 +307,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c0701820-d56c-11ee-a2dd-dda04d5a084f"
+        "id" : "f77d3610-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "related room devices data",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
@@ -325,9 +329,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "5edd3be1-d56e-11ee-a2dd-dda04d5a084f"
+        "id" : "f77d3611-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Root Rule Chain",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -360,9 +365,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "e3368030-d56f-11ee-a550-01ba59c8406a"
+        "id" : "f77d5d20-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "related room (ac or thermo)compare",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
@@ -381,9 +387,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "ffe296b0-d56f-11ee-a922-37ae9eb95d8c"
+        "id" : "f77d5d21-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Root Rule Chain",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -404,9 +411,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "addd77d0-d570-11ee-a2dd-dda04d5a084f"
+        "id" : "f77d8430-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "change energy acc to devices in run",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -427,15 +435,16 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "adde3b20-d570-11ee-a2dd-dda04d5a084f"
+        "id" : "f77dab40-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "room temperature",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "description" : "",
+        "description" : "Building Management",
         "layoutX" : 1074,
         "layoutY" : 101
       },
@@ -454,9 +463,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "746aa170-d571-11ee-a2dd-dda04d5a084f"
+        "id" : "f77dab41-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "cumulative energy origin telemetry",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
@@ -477,9 +487,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "746b8bd0-d571-11ee-a2dd-dda04d5a084f"
+        "id" : "f77dd250-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "cumulative energy stored",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -498,9 +509,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "e9ef7830-d571-11ee-b58c-478d284d7818"
+        "id" : "f77df960-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Root Rule Chain",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -519,9 +531,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "e9f089a0-d571-11ee-b58c-478d284d7818"
+        "id" : "f77e2070-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Root Rule Chain",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -537,19 +550,19 @@
         "scriptLang" : "JS",
         "jsScript" : "\nfunction generateRandomData(min, max) {\n    // Generate a random value between min and max\n    let randomValue = Math.random() * (max - min) + min;\n\n    return randomValue;\n}\n\nvar newmsg = {energy:generateRandomData(100,150) };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: newmsg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "\nfunction generateRandomData(min, max) {\n    // Generate a random value between min and max\n    let randomValue = Math.random() * (max - min) + min;\n\n    return randomValue;\n}\n\nvar newmsg = {energy:generateRandomData(100,150) };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: newmsg, metadata: metadata, msgType: msgType };",
-        "queueName" : null,
         "originatorId" : "4d8a8c20-cfc0-11ee-bbfa-a34d36c3f055",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3c988d50-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77e2071-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Hall Energy Meter",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -565,19 +578,19 @@
         "scriptLang" : "JS",
         "jsScript" : "\nfunction generateRandomData(min, max) {\n    // Generate a random value between min and max\n    let randomValue = Math.random() * (max - min) + min;\n\n    return randomValue;\n}\n\nvar newmsg = {humidity:generateRandomData(10,30) };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: newmsg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "queueName" : null,
         "originatorId" : "3eddae50-cfc0-11ee-bbfa-a34d36c3f055",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3c9950a0-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77e4780-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Hall Humidity Sensor",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -593,19 +606,19 @@
         "scriptLang" : "JS",
         "jsScript" : "\nfunction generateRandomData(min, max) {\n    // Generate a random value between min and max\n    let randomValue = Math.random() * (max - min) + min;\n\n    return randomValue;\n}\n\nvar newmsg = {temperature:generateRandomData(25,30) };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: newmsg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "queueName" : null,
         "originatorId" : "2bc67181-cfc0-11ee-a550-01ba59c8406a",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3c99c5d0-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77e6e90-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Hall Thermostat",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -639,9 +652,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3c9ad740-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77e6e91-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "related room devices data",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
@@ -660,9 +674,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3c9b7380-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77e95a0-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Root Rule Chain",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -695,9 +710,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3c9c36d0-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77e95a1-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "related room (ac or thermo)compare",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
@@ -716,9 +732,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3c9cac00-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77ebcb0-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Root Rule Chain",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -739,9 +756,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3c9d2130-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77ebcb1-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "change energy acc to devices in run",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -762,9 +780,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3c9de480-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77ee3c0-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "room temperature",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -789,9 +808,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3c9e80c0-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77ee3c1-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "cumulative energy origin telemetry",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
@@ -812,9 +832,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3c9f4410-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77f0ad0-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "cumulative energy stored",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -833,9 +854,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3c9fe050-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77f31e0-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Root Rule Chain",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -851,19 +873,19 @@
         "scriptLang" : "JS",
         "jsScript" : "\nfunction generateRandomData(min, max) {\n    // Generate a random value between min and max\n    let randomValue = Math.random() * (max - min) + min;\n\n    return randomValue;\n}\n\nvar newmsg = {energy:generateRandomData(100,150) };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: newmsg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "\nfunction generateRandomData(min, max) {\n    // Generate a random value between min and max\n    let randomValue = Math.random() * (max - min) + min;\n\n    return randomValue;\n}\n\nvar newmsg = {energy:generateRandomData(100,150) };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: newmsg, metadata: metadata, msgType: msgType };",
-        "queueName" : null,
         "originatorId" : "92d8b450-cfc0-11ee-b58c-478d284d7818",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3ca05580-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77f31e1-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Kitchen Energy Meter",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -879,19 +901,19 @@
         "scriptLang" : "JS",
         "jsScript" : "\nfunction generateRandomData(min, max) {\n    // Generate a random value between min and max\n    let randomValue = Math.random() * (max - min) + min;\n\n    return randomValue;\n}\n\nvar newmsg = {humidity:generateRandomData(10,30) };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: newmsg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "queueName" : null,
         "originatorId" : "ac0c45e0-cfc0-11ee-a922-37ae9eb95d8c",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3ca13fe0-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77f31e2-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Kitchen Humidity Sensor",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -907,19 +929,19 @@
         "scriptLang" : "JS",
         "jsScript" : "\nfunction generateRandomData(min, max) {\n    // Generate a random value between min and max\n    let randomValue = Math.random() * (max - min) + min;\n\n    return randomValue;\n}\n\nvar newmsg = {temperature:generateRandomData(25,30) };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: newmsg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "queueName" : null,
         "originatorId" : "9d46d700-cfc0-11ee-a550-01ba59c8406a",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3ca1dc20-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77f58f0-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Kitchen Thermostat",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -953,9 +975,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3ca29f70-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77f8000-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "related room devices data",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
@@ -974,9 +997,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3ca33bb0-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77f8001-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Root Rule Chain",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -1009,9 +1033,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3ca3d7f0-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77fa710-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "related room (ac or thermo)compare",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
@@ -1030,9 +1055,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3ca47430-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77fa711-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Root Rule Chain",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -1053,9 +1079,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3ca51070-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77fce20-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "change energy acc to devices in run",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -1076,9 +1103,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3ca5fad0-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77fce21-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "room temperature",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -1103,9 +1131,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3ca6be20-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77ff530-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "cumulative energy origin telemetry",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
@@ -1126,9 +1155,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3ca75a60-d573-11ee-a550-01ba59c8406a"
+        "id" : "f77ff531-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "cumulative energy stored",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -1147,9 +1177,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3ca7f6a0-d573-11ee-a550-01ba59c8406a"
+        "id" : "f7801c40-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Root Rule Chain",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -1165,19 +1196,19 @@
         "scriptLang" : "JS",
         "jsScript" : "\n// function generateRandomData(min, max) {\n//     // Generate a random value between min and max\n//     let randomValue = Math.random() * (max - min) + min;\n\n//     return randomValue;\n// }\n\nfunction getRandomInt(min, max) {\n  min = Math.ceil(min);\n  max = Math.floor(max);\n  return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\nvar newmsg = {occupancy:getRandomInt(0,7) };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: newmsg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "queueName" : null,
         "originatorId" : "1a1ad2a0-cfc0-11ee-b58c-478d284d7818",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3ca892e0-d573-11ee-a550-01ba59c8406a"
+        "id" : "f7801c41-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Hall Occupancy Sensor",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -1196,9 +1227,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3ca92f20-d573-11ee-a550-01ba59c8406a"
+        "id" : "f7804350-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Root Rule Chain",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -1214,19 +1246,19 @@
         "scriptLang" : "JS",
         "jsScript" : "\n// function generateRandomData(min, max) {\n//     // Generate a random value between min and max\n//     let randomValue = Math.random() * (max - min) + min;\n\n//     return randomValue;\n// }\n\nfunction getRandomInt(min, max) {\n  min = Math.ceil(min);\n  max = Math.floor(max);\n  return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\nvar newmsg = {occupancy:getRandomInt(0,7) };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: newmsg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "queueName" : null,
         "originatorId" : "88a32dd0-cfc0-11ee-a2dd-dda04d5a084f",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3ca9cb60-d573-11ee-a550-01ba59c8406a"
+        "id" : "f7804351-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Kitchen Occupancy Sensor",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -1245,9 +1277,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3caa4090-d573-11ee-a550-01ba59c8406a"
+        "id" : "f7806a60-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Root Rule Chain",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -1283,18 +1316,18 @@
           "defaultValue" : 0,
           "aggFunction" : "SUM",
           "target" : "energyCumulativeOfBuilding"
-        } ],
-        "queueName" : null
+        } ]
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "91a69a70-d5f6-11ee-a2dd-dda04d5a084f"
+        "id" : "f7809170-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "aggregate energyCumulative of whole building",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.latest.telemetry.TbAggLatestTelemetryNode"
@@ -1313,9 +1346,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "91a7abe0-d5f6-11ee-a2dd-dda04d5a084f"
+        "id" : "f780b880-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Root Rule Chain",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -1331,19 +1365,19 @@
         "scriptLang" : "JS",
         "jsScript" : "\n// function generateRandomData(min, max) {\n//     // Generate a random value between min and max\n//     let randomValue = Math.random() * (max - min) + min;\n\n//     return randomValue;\n// }\n\nfunction getRandomInt(min, max) {\n  min = Math.ceil(min);\n  max = Math.floor(max);\n  return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\nvar newmsg = {gasConsumed:getRandomInt(1,3) };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: newmsg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "queueName" : null,
         "originatorId" : "7aa46b00-d5fa-11ee-a922-37ae9eb95d8c",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "ed06cc10-d5fa-11ee-a2dd-dda04d5a084f"
+        "id" : "f780b881-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "GasConsumptionSensor",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -1362,9 +1396,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "bd2d6340-d5fb-11ee-a550-01ba59c8406a"
+        "id" : "f780df90-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Root Rule Chain",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -1389,9 +1424,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "6b8f1520-d5ff-11ee-b58c-478d284d7818"
+        "id" : "f780df91-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "cumulative gas consumed originator telemetry",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
@@ -1412,9 +1448,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "6b902690-d5ff-11ee-b58c-478d284d7818"
+        "id" : "f78106a0-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "cumulativegasConsumed stored",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -1430,19 +1467,19 @@
         "scriptLang" : "JS",
         "jsScript" : "\nfunction generateRandomData(min, max) {\n    // Generate a random value between min and max\n    let randomValue = Math.random() * (max - min) + min;\n\n    return randomValue;\n}\n\nvar newmsg = { COlevel:generateRandomData(10,35) ,LPGlevel:generateRandomData(1000,1900) };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: newmsg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "queueName" : null,
         "originatorId" : "e506e840-d610-11ee-a922-37ae9eb95d8c",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "6f219010-d612-11ee-bbfa-a34d36c3f055"
+        "id" : "f78106a1-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "genrator of COlevel LPGlevel",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -1461,9 +1498,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "8707e120-d612-11ee-a2dd-dda04d5a084f"
+        "id" : "f7812db0-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Root Rule Chain",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -1482,9 +1520,10 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "8af18cc0-e68c-11ee-bbcd-db2b8a72833a"
+        "id" : "f7812db1-e767-11ee-9d78-27edb85da3c3"
       },
       "name" : "Root Rule Chain",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"

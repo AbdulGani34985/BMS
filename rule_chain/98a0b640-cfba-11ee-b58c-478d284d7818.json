@@ -4,7 +4,10 @@
     "additionalInfo" : null,
     "configuration" : null,
     "debugMode" : false,
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "98a0b640-cfba-11ee-b58c-478d284d7818"
+    },
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
       "id" : "98acc430-cfba-11ee-b58c-478d284d7818"
@@ -86,6 +89,7 @@
         "id" : "98a32740-cfba-11ee-b58c-478d284d7818"
       },
       "name" : "Save Timeseries",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
@@ -109,6 +113,7 @@
         "id" : "98a4fc00-cfba-11ee-b58c-478d284d7818"
       },
       "name" : "Save Attributes",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
@@ -130,6 +135,7 @@
         "id" : "98a63480-cfba-11ee-b58c-478d284d7818"
       },
       "name" : "Message Type Switch",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
@@ -152,6 +158,7 @@
         "id" : "98a79410-cfba-11ee-b58c-478d284d7818"
       },
       "name" : "Log RPC from Device",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
@@ -174,6 +181,7 @@
         "id" : "98a85760-cfba-11ee-b58c-478d284d7818"
       },
       "name" : "Log Other",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
@@ -194,6 +202,7 @@
         "id" : "98a968d0-cfba-11ee-b58c-478d284d7818"
       },
       "name" : "RPC Call Request",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
@@ -215,6 +224,7 @@
         "id" : "98aa5330-cfba-11ee-b58c-478d284d7818"
       },
       "name" : "Is Entity Group",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
@@ -235,6 +245,7 @@
         "id" : "98ab3d90-cfba-11ee-b58c-478d284d7818"
       },
       "name" : "Post attributes or RPC request",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
@@ -256,6 +267,7 @@
         "id" : "98ac00e0-cfba-11ee-b58c-478d284d7818"
       },
       "name" : "Duplicate To Group Entities",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToGroupNode"
@@ -278,6 +290,7 @@
         "id" : "98acc430-cfba-11ee-b58c-478d284d7818"
       },
       "name" : "Device Profile Node",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.profile.TbDeviceProfileNode"
@@ -299,6 +312,7 @@
         "id" : "98ad6070-cfba-11ee-b58c-478d284d7818"
       },
       "name" : "Generate Report",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"

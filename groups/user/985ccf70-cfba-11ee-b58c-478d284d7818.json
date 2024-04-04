@@ -26,7 +26,10 @@
       "actions" : { }
     },
     "edgeGroupAll" : false,
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "985ccf70-cfba-11ee-b58c-478d284d7818"
+    },
     "groupAll" : false,
     "id" : {
       "entityType" : "ENTITY_GROUP",
@@ -35,7 +38,7 @@
     "name" : "Tenant Administrators",
     "ownerId" : {
       "entityType" : "TENANT",
-      "id" : "9853cec0-cfba-11ee-b58c-478d284d7818"
+      "id" : "013b8300-e763-11ee-9d78-27edb85da3c3"
     },
     "type" : "USER"
   },

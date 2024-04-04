@@ -12,7 +12,10 @@
       "entityType" : "CUSTOMER",
       "id" : "983c7080-dace-11ee-a550-01ba59c8406a"
     },
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "ASSET",
+      "id" : "4288f550-cfbb-11ee-a2dd-dda04d5a084f"
+    },
     "id" : {
       "entityType" : "ASSET",
       "id" : "4288f550-cfbb-11ee-a2dd-dda04d5a084f"
@@ -149,18 +152,18 @@
   "attributes" : {
     "SERVER_SCOPE" : [ {
       "booleanValue" : null,
-      "doubleValue" : 13.84,
+      "doubleValue" : 18.53,
       "jsonValue" : null,
       "key" : "acLevel",
-      "lastUpdateTs" : 1709623010868,
+      "lastUpdateTs" : 1711393086871,
       "longValue" : null,
       "strValue" : null
     }, {
-      "booleanValue" : false,
+      "booleanValue" : true,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "enabledAC",
-      "lastUpdateTs" : 1709617317119,
+      "lastUpdateTs" : 1711393100277,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -176,7 +179,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "enabledLight",
-      "lastUpdateTs" : 1709617442197,
+      "lastUpdateTs" : 1711393099422,
       "longValue" : null,
       "strValue" : null
     }, {

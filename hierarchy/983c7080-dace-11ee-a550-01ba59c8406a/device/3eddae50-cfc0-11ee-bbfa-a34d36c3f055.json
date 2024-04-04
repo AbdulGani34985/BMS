@@ -22,7 +22,10 @@
       "entityType" : "DEVICE_PROFILE",
       "id" : "964b6250-cfbf-11ee-bbfa-a34d36c3f055"
     },
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "DEVICE",
+      "id" : "3eddae50-cfc0-11ee-bbfa-a34d36c3f055"
+    },
     "firmwareId" : null,
     "id" : {
       "entityType" : "DEVICE",
@@ -38,7 +41,7 @@
     "type" : "Humidity"
   },
   "credentials" : {
-    "credentialsId" : "vVj6BqC3udU8cRoO8HYO",
+    "credentialsId" : "cgcUuT6QzEvTgxT92O7Y",
     "credentialsType" : "ACCESS_TOKEN",
     "credentialsValue" : null
   },
@@ -61,7 +64,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "active",
-      "lastUpdateTs" : 1708414125214,
+      "lastUpdateTs" : 1711014430842,
       "longValue" : null,
       "strValue" : null
     }, {

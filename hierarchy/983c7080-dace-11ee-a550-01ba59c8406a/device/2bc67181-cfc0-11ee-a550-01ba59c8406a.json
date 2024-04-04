@@ -22,7 +22,10 @@
       "entityType" : "DEVICE_PROFILE",
       "id" : "76873660-cfbf-11ee-a550-01ba59c8406a"
     },
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "DEVICE",
+      "id" : "2bc67181-cfc0-11ee-a550-01ba59c8406a"
+    },
     "firmwareId" : null,
     "id" : {
       "entityType" : "DEVICE",
@@ -38,7 +41,7 @@
     "type" : "Thermostat"
   },
   "credentials" : {
-    "credentialsId" : "frHK0V3yeoM6Yth65nLN",
+    "credentialsId" : "sRfxur7UycR7yRWSHDQd",
     "credentialsType" : "ACCESS_TOKEN",
     "credentialsValue" : null
   },
@@ -61,7 +64,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "active",
-      "lastUpdateTs" : 1708414089124,
+      "lastUpdateTs" : 1711278198250,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -69,8 +72,16 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "inactivityAlarmTime",
-      "lastUpdateTs" : 1708414089124,
-      "longValue" : 1708414089120,
+      "lastUpdateTs" : 1711278198250,
+      "longValue" : 1711278198249,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1711277564693,
+      "longValue" : 1711277562882,
       "strValue" : null
     } ],
     "SHARED_SCOPE" : [ ]

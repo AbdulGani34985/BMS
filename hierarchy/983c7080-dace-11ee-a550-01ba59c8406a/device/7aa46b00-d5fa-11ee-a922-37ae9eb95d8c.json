@@ -22,7 +22,10 @@
       "entityType" : "DEVICE_PROFILE",
       "id" : "7808d890-d5fa-11ee-a922-37ae9eb95d8c"
     },
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "DEVICE",
+      "id" : "7aa46b00-d5fa-11ee-a922-37ae9eb95d8c"
+    },
     "firmwareId" : null,
     "id" : {
       "entityType" : "DEVICE",
@@ -38,7 +41,7 @@
     "type" : "GasConsumption_Sensors"
   },
   "credentials" : {
-    "credentialsId" : "nbWxt0mIkDt31kHZMVWy",
+    "credentialsId" : "3DMBZIobUx5DvokLfYJP",
     "credentialsType" : "ACCESS_TOKEN",
     "credentialsValue" : null
   },
@@ -61,7 +64,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "active",
-      "lastUpdateTs" : 1709098837045,
+      "lastUpdateTs" : 1711014430986,
       "longValue" : null,
       "strValue" : null
     }, {
